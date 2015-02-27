@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="HelloWorld_part2_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="World_Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="0C1-5S-Qax">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upO-8f-yhh">
+                                <rect key="frame" x="16" y="28" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tET-xN-36C">
+                                <rect key="frame" x="461" y="552" width="123" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="QJj-8C-Gmk"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="upO-8f-yhh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="0Sj-6z-9Ts"/>
+                            <constraint firstItem="tET-xN-36C" firstAttribute="trailing" secondItem="upO-8f-yhh" secondAttribute="trailing" id="3ER-mH-iZn"/>
+                            <constraint firstItem="upO-8f-yhh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="7vq-Bh-b8g"/>
+                            <constraint firstAttribute="bottom" secondItem="tET-xN-36C" secondAttribute="bottom" constant="20" symbolic="YES" id="D2I-jv-RlV"/>
+                            <constraint firstItem="0C1-5S-Qax" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Kgf-2w-oji"/>
+                            <constraint firstItem="upO-8f-yhh" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="YZA-29-BqE"/>
+                            <constraint firstItem="0C1-5S-Qax" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="pdv-fy-KEQ"/>
+                            <constraint firstItem="0C1-5S-Qax" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="qmN-Hu-8Vd"/>
+                            <constraint firstItem="0C1-5S-Qax" firstAttribute="centerX" secondItem="upO-8f-yhh" secondAttribute="centerX" id="rtt-9z-wud"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="upO-8f-yhh" id="JdG-1W-W54"/>
+                        <outlet property="worldImage" destination="0C1-5S-Qax" id="H6s-q5-taP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="World_Image_1" width="652" height="852"/>
+    </resources>
+</document>

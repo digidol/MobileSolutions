@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="HelloWorld_part3_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="World_Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="zbY-Sv-R3g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPk-dO-DFs">
+                                <rect key="frame" x="16" y="20" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-6L-PUq">
+                                <rect key="frame" x="461" y="552" width="123" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Zgm-lx-ge3"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11m-AG-e3g">
+                                <rect key="frame" x="16" y="49" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="8v5-0Y-IQ0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-eG-z1d">
+                                <rect key="frame" x="131" y="49" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="textButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bJj-xh-aSi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CPk-dO-DFs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="0Yt-N3-NKZ"/>
+                            <constraint firstItem="11m-AG-e3g" firstAttribute="leading" secondItem="CPk-dO-DFs" secondAttribute="leading" id="8IO-oi-2Sf"/>
+                            <constraint firstItem="gLn-eG-z1d" firstAttribute="top" secondItem="11m-AG-e3g" secondAttribute="top" id="9NI-xW-ke1"/>
+                            <constraint firstItem="11m-AG-e3g" firstAttribute="top" secondItem="CPk-dO-DFs" secondAttribute="bottom" constant="8" symbolic="YES" id="E7X-lq-FLG"/>
+                            <constraint firstItem="zbY-Sv-R3g" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="GK3-Ar-GqI"/>
+                            <constraint firstItem="zbY-Sv-R3g" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="I6u-QB-ilf"/>
+                            <constraint firstItem="zbY-Sv-R3g" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cOJ-Iv-6XT"/>
+                            <constraint firstItem="CPk-dO-DFs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fjW-LT-9l1"/>
+                            <constraint firstAttribute="bottom" secondItem="NMc-6L-PUq" secondAttribute="bottom" constant="20" symbolic="YES" id="fjt-nQ-Grt"/>
+                            <constraint firstItem="gLn-eG-z1d" firstAttribute="leading" secondItem="11m-AG-e3g" secondAttribute="trailing" constant="18" id="lW0-J9-DlW"/>
+                            <constraint firstItem="CPk-dO-DFs" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="uIH-vL-PCy"/>
+                            <constraint firstItem="zbY-Sv-R3g" firstAttribute="centerX" secondItem="CPk-dO-DFs" secondAttribute="centerX" id="wZL-Pj-DvI"/>
+                            <constraint firstItem="NMc-6L-PUq" firstAttribute="trailing" secondItem="CPk-dO-DFs" secondAttribute="trailing" id="ysi-V0-4q4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="CPk-dO-DFs" id="e7X-lX-p4I"/>
+                        <outlet property="textField" destination="11m-AG-e3g" id="oI7-TF-yIY"/>
+                        <outlet property="worldImage" destination="zbY-Sv-R3g" id="rR8-eg-rl9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="World_Image_1" width="652" height="852"/>
+    </resources>
+</document>
