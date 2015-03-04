@@ -37,14 +37,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     @IBAction func textButtonPressed(sender: AnyObject) {
         messageLabel.text = "Hello, \(textField.text)"
         textField.resignFirstResponder()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        textButtonPressed(self)
         return false
     }
+    
 }
+
+
+
+
+
+
+
+
 

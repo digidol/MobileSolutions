@@ -405,6 +405,7 @@
 				6BCB02F21AA0C1B000F295E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BCB02F31AA0C1B000F295E9 /* Build configuration list for PBXNativeTarget "HelloWorld-part3-SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				6BCB02F51AA0C1B000F295E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
