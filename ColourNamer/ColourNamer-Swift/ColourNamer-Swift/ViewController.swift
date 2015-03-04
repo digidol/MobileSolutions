@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
-    var name: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         reset(self)

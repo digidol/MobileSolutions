@@ -91,14 +91,14 @@ number = 10
 // see in the variable display on the right of the line, that it is immediately
 // shown to have the value nil.
 
-var code: String? = "test"
+var code: String?
 
 // What happens if you try to print out the code variable using println? Try it
 // out on the following line.
 
 // Did that work? 
 
-// The value is printed out as nil. The ? means that if not 'value' is specified, 
+// The value is printed out as nil. The ? means that if no 'value' is specified,
 // the variable will be set to nil. Therefore, the variable has actually been 
 // intialised. Once it has been initialised, it can be used.
 
