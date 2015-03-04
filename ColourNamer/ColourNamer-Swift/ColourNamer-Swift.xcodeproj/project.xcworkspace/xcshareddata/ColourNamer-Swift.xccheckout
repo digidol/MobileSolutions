@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2C86E134-3076-4A9F-B6F9-146007881AA1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ColourNamer-Swift</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A0D9336856C8E08E3EEFBCD97E6A28F552C2654A</key>
+		<string>https://github.com/digidol/MobileSolutions.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ColourNamer/ColourNamer-Swift/ColourNamer-Swift.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A0D9336856C8E08E3EEFBCD97E6A28F552C2654A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/digidol/MobileSolutions.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A0D9336856C8E08E3EEFBCD97E6A28F552C2654A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A0D9336856C8E08E3EEFBCD97E6A28F552C2654A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MobileSolutions</string>
+		</dict>
+	</array>
+</dict>
+</plist>
