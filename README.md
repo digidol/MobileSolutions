@@ -26,6 +26,8 @@ There are several example projects, looking at tables with Static Cells and Prot
 ## Tab Bar 
 This project uses a UITabBarController to manage a multi-screen view. A basic version is built and then extended. 
 
+These projects also introduce the use of external libraries (MapKit, Social and MessageUI).  
+
 [More...](http://www.github.com/digidol/MobileSolutions/tree/master/TabBar)
 
 ---
