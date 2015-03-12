@@ -18,6 +18,15 @@ This application was discussed in Sessions 2 and 3. The application has two View
 
 [More...](http://www.github.com/digidol/MobileSolutions/tree/master/ColourNamer)
 
+## Tables 
+There are several example projects, looking at tables with Static Cells and Prototype Cells. 
+
+[More...](http://www.github.com/digidol/MobileSolutions/tree/master/Tables)
+
+## Tab Bar 
+This project uses a UITabBarController to manage a multi-screen view. A basic version is built and then extended. 
+
+[More...](http://www.github.com/digidol/MobileSolutions/tree/master/TabBar)
 
 ---
 
