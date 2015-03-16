@@ -30,6 +30,11 @@ These projects also introduce the use of external libraries (MapKit, Social and 
 
 [More...](http://www.github.com/digidol/MobileSolutions/tree/master/TabBar)
 
+## Data Store 
+This area contains projects looking at the use of SQLite and Core Data to store informtion.  
+
+[More...](http://www.github.com/digidol/MobileSolutions/tree/master/Data%20Storeage)
+
 ---
 
 Neil Taylor, [Department of Computer Science](http://www.aber.ac.uk/en/cs/), Aberystwyth University
