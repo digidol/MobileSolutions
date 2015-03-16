@@ -1,7 +1,7 @@
 # MobileSolutions
 This repository contains code for the iOS section of the Mobile Solutions module ([SEM2220/CSM2220](http://www.aber.ac.uk/en/modules/deptcurrent/?m=CSM2220)) at Aberystwyth University, Wales, UK. 
 
-The code is written in [Swift](http://developer.apple.com/swift) 1.1 for iOS 8. 
+The code is written in [Swift](http://developer.apple.com/swift) 1.1 for iOS 8. This code has been written and tested using Xcode 6.1.1 and Xcode 6.2. 
 
 ## Hello World
 This application was discussed in Sessions 1 and 2. It covers the main topics of a single-view application. It uses a UILabel, UIImageView, UIButton, UITextField and UIViewController.  
