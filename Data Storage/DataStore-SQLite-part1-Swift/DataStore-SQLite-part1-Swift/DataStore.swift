@@ -21,12 +21,6 @@ class DataStore {
      * Initialise the object by opening the database.
      */
     init() {
-        /*let bundle = NSBundle.mainBundle()
-        let bundleURL = bundle.URLForResource("iOSDevUK2014",
-                                 withExtension: "sqlite3")!.absoluteString!
-        println("The bundle url is: \(bundleURL)")
-        */
-        
         if let filePath = prepareDatabasePath() {
         
            var result = sqlite3_open(filePath, &database)
@@ -70,45 +64,6 @@ class DataStore {
     }
     
     
-    private func initOld() {
-        
-        /** Accessing the file from the Documents directory. */
-        let manager = NSFileManager.defaultManager()
-        let urls = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let documentDirectoryURL = urls[urls.count-1] as NSURL
-        let url = documentDirectoryURL.URLByAppendingPathComponent("iOSDevUK2014.sqlite3").absoluteString!
-        
-        println("The path is: \(url)")
-
-        let fileManager = NSFileManager.defaultManager()
-        if !fileManager.fileExistsAtPath(url) {
-            
-            // copy the file from the main bundle
-            let bundle = NSBundle.mainBundle()
-            let bundleURL = bundle.URLForResource("iOSDevUK2014", withExtension: "sqlite3")!.absoluteString!
-            println("The bundle url is: \(bundleURL)")
-            
-            var error: NSError?
-            
-            if fileManager.copyItemAtPath(bundleURL, toPath: url, error: &error) {
-               println("File copied to Documents directory: \(url)")
-            }
-            else {
-               hardFail("Failed to copy file with error \(error!)")
-            }
-        }
-        else {
-           println("File already exists at: \(url)")
-        }
-        
-        var result = sqlite3_open(url, &database)
-        
-        if result != SQLITE_OK {
-            hardFail("Unable to open the database")
-        }
-        
-    }
-    
     /**
      * Simple failure method that will close the database, display
      * an error message and then abort the application.
@@ -131,9 +86,10 @@ class DataStore {
     }
     
     /** 
-     * 
+     * This version was presented in the lectures. An alternative version, below, 
+     * is currently linked into this version.
      */
-    func sessionItemList() -> [SessionItem]? {
+    func sessionItemListSimple() -> [SessionItem]? {
         
         let query =
            "Select id, title, content, dayId FROM SessionItem ORDER BY dayId, sessionOrder"
@@ -160,9 +116,14 @@ class DataStore {
     }
     
     /** 
+     * This example shows how to run a query for the SessionItems. The query is more 
+     * complex than the one shown in the lectures, because it also links in the 
+     * associated location for the lecture.
      * 
+     * The method returns an array of SessionItem objects, where each SessionItem has 
+     * an associated Location.
      */
-    func sessionItemListAlt() -> [SessionItem]? {
+    func sessionItemList() -> [SessionItem]? {
         
         let query = "SELECT S.id, title, content, dayId, L.id, L.name, L.latitude, L.longitude " +
           " FROM SessionItem as S, Location as L WHERE S.locationId = L.id " +
@@ -201,6 +162,13 @@ class DataStore {
         return nil
     }
     
+    /** 
+     * Example of preparing a statement to be sent to the database, which will 
+     * make a change to the content of a database table. This example uses an
+     * Update statement. In addition to the COpaquePointer type, used for the 
+     * statement, this extract also shows how to convert a Swift string into 
+     * a UTF8String that is suitable for sending to SQLite.
+     */
     func modifyTitle(title: String, forId id: String) {
         
         let query = "UPDATE SessionItem SET title = ? where id = ?"
