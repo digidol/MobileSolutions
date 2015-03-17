@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="13F1066" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Speaker" representedClassName="DataStore_CoreData_part1_Swift.Speaker" syncable="YES">
+        <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="forename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="talks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Talk" inverseName="speaker" inverseEntity="Talk" syncable="YES"/>
+    </entity>
+    <entity name="Talk" representedClassName="DataStore_CoreData_part1_Swift.Talk" syncable="YES">
+        <attribute name="abstract" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="speaker" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="talks" inverseEntity="Speaker" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Speaker" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="Talk" positionX="180" positionY="132" width="128" height="88"/>
+    </elements>
+</model>
