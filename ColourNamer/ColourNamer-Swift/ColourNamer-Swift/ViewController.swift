@@ -63,8 +63,8 @@ class ViewController: UIViewController {
     @IBAction func setColourName(segue: UIStoryboardSegue) {
         let source = segue.sourceViewController as? NamerViewController
         
-        if var name = source?.textField?.text {
-                setCurrentName(name)
+        if let name = source?.textField?.text {
+            setCurrentName(name)
         }
         else {
             setCurrentName("Unknown")

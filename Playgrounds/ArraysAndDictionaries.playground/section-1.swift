@@ -7,7 +7,7 @@
 // This Playground looks at the use of Arrays and Dictionaries within Swift. These
 // two basic collection types can be useful building blocks for your programs.
 //
-// Neil Taylor, nst@aber.ac.uk, 3rd March 2015
+// Neil Taylor, nst@aber.ac.uk, 9th February 2016
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -49,7 +49,7 @@ languages += ["Dylan"]
 // View the results using a for loop 
 
 for language in languages {
-   println(language)
+   print(language)
 }
 
 // You can actually add more items, by using a comma separated list between the 
@@ -87,7 +87,7 @@ modules["SEM5640"] = "Developing Advanced Internet-based Applications"
 // To iterate over a dictionary 
 
 for (moduleCode, moduleName) in modules {
-    println("\(moduleCode) is \(moduleName)")
+    print("\(moduleCode) is \(moduleName)")
 }
 
 // To delete, you can set the value for a key to nil. Or, you can use 

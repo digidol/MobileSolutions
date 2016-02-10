@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let dictionary = defaults.dictionaryForKey("ColourNames") {
-            names = dictionary as Dictionary<String,String>
+            names = dictionary as! Dictionary<String,String>
 
         }
     }
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
         
         if var name = source?.textField?.text {
             name = name.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-            if countElements(name) == 0 {
+            if name.characters.count == 0 {
                 setCurrentName("Unknown")
             }
             else {

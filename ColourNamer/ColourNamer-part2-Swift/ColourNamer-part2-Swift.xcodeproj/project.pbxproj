@@ -159,6 +159,8 @@
 		6B02F3111AA6D375003CDD52 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Aberystwyth University";
 				TargetAttributes = {
@@ -409,6 +411,7 @@
 				6B02F33A1AA6D376003CDD52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B02F33B1AA6D376003CDD52 /* Build configuration list for PBXNativeTarget "ColourNamer-part2-SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				6B02F33D1AA6D376003CDD52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

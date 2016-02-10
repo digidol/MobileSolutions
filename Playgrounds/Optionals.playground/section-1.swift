@@ -51,6 +51,8 @@ moduleName = "Mobile Solutions"
 // What happens if you insert a println statement on line 41 so that you 
 // can output the moduleName? 
 
+print(moduleName)
+
 // Try it. What do you see?
 
 // You should see that there is an error, stating that the variable hasn't been 
@@ -139,7 +141,7 @@ var code: String?
 // Note the use of the ! to force the unwrapping of the value.
 
 if code != nil {
-   println("The code has a value \(code!)")
+   print("The code has a value \(code!)")
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -161,8 +163,8 @@ func describeTheOptionalString(item : String?) -> String {
 
 // What values are returned when we call the method with these values:
 
-println(describeTheOptionalString(nil))
-println(describeTheOptionalString("Test"))
+print(describeTheOptionalString(nil))
+print(describeTheOptionalString("Test"))
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -175,10 +177,10 @@ println(describeTheOptionalString("Test"))
 // the value, if one exists. Look at the following example.
 
 if let c = code {
-   println("The value for code is \(c)")
+   print("The value for code is \(c)")
 }
 else {
-   println("There is no value for code")
+   print("There is no value for code")
 }
 
 // The if statement declares a constant (using let) called c and attempts to assign 
@@ -206,7 +208,7 @@ else {
 // We have already seen an example with the @IBOutlet items that we have been 
 // adding to the ViewController classes. An example is below.
 
-var label: UILabel!
+var label: UILabel! = UILabel()
 
 // The above line sets label to nil. As the view is loaded, the corresponding label 
 // will be created and the label will point to that new instance. The ! means that 
@@ -215,9 +217,9 @@ var label: UILabel!
 
 // With the above definition, what gets output as a result of the following line?
 
-println(label)
+print(label)
 
-// What output do you get from the println if you modify the definition on line 209?
+// What output do you get from the print if you modify the definition on line 209?
 // Assign an initial value, i.e. = UILabel()
 
 // Apple's manual states that you should only use the Implicitly Unwrapped technique 
@@ -248,7 +250,7 @@ var f = Film()
 // Set a value for name to see that this works correctly.
 
 if f.name != nil {
-   println("The name in lower case is: \(f.name!.lowercaseString)")
+   print("The name in lower case is: \(f.name!.lowercaseString)")
 }
 
 // That isn't so bad in this example, but what if we had a chain of several items that 
@@ -256,7 +258,7 @@ if f.name != nil {
 // lowercaseString if the name contains a value. As an example, compare the following:
 
 if let test = f.name?.lowercaseString {
-   println(test)
+   print(test)
 }
 
 // We have already seen this at the end of the slides for Session 1. We were using 
