@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
 
-    // Hold a list of named items
+    // Hold a dictionary of named items
     var names = [String: String]()
     
     override func viewDidLoad() {
@@ -27,32 +27,37 @@ class ViewController: UIViewController {
     }
     
     func saveData() {
-        /*let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true) as NSArray
-        let documentsPath = paths[0] as String
-        println("Documents path: \(documentsPath)")
-        let filePath = documentsPath.stringByAppendingPathComponent("Colours.plist")
-        let namesDictionary = names as NSDictionary
-        namesDictionary.writeToFile(filePath, atomically: true)*/
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(names, forKey: "ColourNames")
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        
+        print("Documents path: \(documentsURL)")
+        
+        let fileURL = documentsURL.URLByAppendingPathComponent("Colours.plist")
+        
+        let namesDictionary = names as NSDictionary
+        namesDictionary.writeToURL(fileURL, atomically: true)
+        
+        /*let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(names, forKey: "ColourNames")*/
     }
     
     func loadData() {
-        /*let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true) as NSArray
-        let documentsPath = paths[0] as String
-        println("Documents path: \(documentsPath)")
-        let filePath = documentsPath.stringByAppendingPathComponent("Colours.plist")
-        names = NSDictionary(contentsOfFile: filePath) as Dictionary*/
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        print("Documents path: \(documentsURL)")
+        
+        let fileURL = documentsURL.URLByAppendingPathComponent("Colours.plist")
+        
+        if let dictionaryNames = (NSDictionary(contentsOfURL: fileURL) as? Dictionary<String, String>) {
+            names = dictionaryNames
+        }
+        
+        /*let defaults = NSUserDefaults.standardUserDefaults()
         
         if let dictionary = defaults.dictionaryForKey("ColourNames") {
             names = dictionary as! Dictionary<String,String>
 
-        }
+        }*/
     }
     
     override func viewWillDisappear(animated: Bool) {

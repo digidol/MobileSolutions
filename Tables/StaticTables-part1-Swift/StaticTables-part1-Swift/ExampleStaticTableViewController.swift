@@ -11,12 +11,4 @@ import UIKit
 class ExampleStaticTableViewController: UITableViewController {
     
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-         println("About to run the segue")
-        
-        if let controller = segue.destinationViewController as? FirstViewDataViewController {
-           
-        }
-        
-    }
 }
