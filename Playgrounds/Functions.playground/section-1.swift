@@ -5,7 +5,7 @@
 
 // The following example is a function that only includes the name.
 func aFunctionName() {
-   println("The statements are inserted here")
+   print("The statements are inserted here")
 }
 
 // To call the function 
@@ -37,7 +37,7 @@ func add(int1: Int, int2: Int) -> Int {
 }
 
 // To call this method, we would write: 
-add(1, 2)
+add(1, int2: 2)
 
 /* 
 
@@ -86,11 +86,12 @@ func add(number int1: Int, toOtherNumber int2: Int) -> Int {
 
 You don't always have think of two different names.
 If you have a good local parameter name that is also useful as an external 
-parameter name, you can use the # character before the name.
-
+parameter name. As of Swift 2, you insert the name twice. 
+ 
+In Swift 1, you could use the # character before the name.
 */
 
-func add(#doubleOne: Double, #doubleTwo: Double) -> Double {
+func add(doubleOne doubleOne: Double, doubleTwo: Double) -> Double {
     return doubleOne + doubleTwo
 }
 
@@ -99,9 +100,7 @@ func add(#doubleOne: Double, #doubleTwo: Double) -> Double {
 // 3.1 How would you call this method? Type it in an try it.
 **************************************************/
 
-
-
-// You have seen examples of the external parameter names when working with the tableView methods. 
+// You have seen examples of the external parameter names when working with the tableView methods.
 // For example, you have seen the following method call.
 
 // tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
@@ -112,7 +111,7 @@ func add(#doubleOne: Double, #doubleTwo: Double) -> Double {
 // Method parameters can also have default values.
 
 func setName(forename f: String = "Unknown", surname s: String, initials i: String = "") {
-    println("The values were \(f) \(i) \(s)")
+    print("The values were \(f) \(i) \(s)")
 }
 
 // Example method calls are shown below.
@@ -189,28 +188,28 @@ func swap(left: Int, right: Int) -> (left: Int, right: Int) {
    return (right, left)
 }
 
-let swappedValues = swap(10, 20)
+let swappedValues = swap(10, right: 20)
 
 // You can access the values using the names specified in the tuple
 
-println(swappedValues.left)
-println(swappedValues.right)
+print(swappedValues.left)
+print(swappedValues.right)
 
 // You can also access the values using the index for the position 
 
-println(swappedValues.0)
-println(swappedValues.1)
+print(swappedValues.0)
+print(swappedValues.1)
 
 // The tuple doesn't have to specify names, so you could alternatively have: 
 func swapAlternative(left: Int, right: Int) -> (Int, Int) {
     return (right, left)
 }
 
-let swappedValuesAlternative = swapAlternative(15, 5)
+let swappedValuesAlternative = swapAlternative(15, right: 5)
 
 // In this situation, you could only use the index positions because there aren't any names 
-println(swappedValuesAlternative.0)
-println(swappedValuesAlternative.1)
+print(swappedValuesAlternative.0)
+print(swappedValuesAlternative.1)
 
 // You can also pass in a tuple as a parameter.
 
