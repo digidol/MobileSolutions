@@ -3,7 +3,7 @@
 //  PrototypeTables-part1-Swift
 //
 //  Created by Neil Taylor on 05/03/2015.
-//  Copyright (c) 2015 Aberystwyth University. All rights reserved.
+//  Copyright (c) 2015-2016 Aberystwyth University. All rights reserved.
 //
 
 import UIKit
@@ -22,10 +22,13 @@ class ViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail
-            }
+        
+        // Note, this is different from the worksheet example code. We are 
+        // using a Swift 2 feature, that allows us to provide multiple let 
+        // assignments in a single if statement. In Swift 1.1, we needed 
+        // to do this as two if statements, as shown in the worksheet.
+        if let detail = self.detailItem, label = self.detailDescriptionLabel {
+            label.text = detail
         }
     }
     

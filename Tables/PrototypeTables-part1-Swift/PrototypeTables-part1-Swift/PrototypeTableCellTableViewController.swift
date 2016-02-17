@@ -25,7 +25,7 @@ class PrototypeTableCellTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 160
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath
