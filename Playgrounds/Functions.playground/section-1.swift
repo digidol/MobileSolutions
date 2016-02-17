@@ -4,6 +4,7 @@
 // A function has a name, an optional list of parameters and an optional return value. Functions can be written at a global level or within classes and structs. All functions start with the keyword func.
 
 // The following example is a function that only includes the name.
+
 func aFunctionName() {
    print("The statements are inserted here")
 }
@@ -12,18 +13,15 @@ func aFunctionName() {
 aFunctionName()
 
 
-// The return value is specified after the parameter list. The symbols -> are 
-// used to separate the parameter list and the return type
+// The return value is specified after the parameter list. The symbols -> are used to separate the parameter list and the return type
 func getMeAStringValue() -> String {
    return "A string value as the result"
 }
 
 /*************************************************
 // Activity
-// 1.1 Write a statement that defines a constant that is initialised the result
-//     form this method.
+// 1.1 Write a statement that defines a constant that is initialised to the result from this method.
 **************************************************/
-
 
 //////////////////////////////////////////////////////////////////////////////
 ///
@@ -31,7 +29,9 @@ func getMeAStringValue() -> String {
 ///
 //////////////////////////////////////////////////////////////////////////////
 
+
 // The parameter list contains parameter names, followed by a colon, followed by a type. If there are multiple parameter names, each parameter is separated by a comma.
+
 func add(int1: Int, int2: Int) -> Int {
    return int1 + int2
 }
@@ -39,36 +39,21 @@ func add(int1: Int, int2: Int) -> Int {
 // To call this method, we would write: 
 add(1, int2: 2)
 
-/* 
+// There is a different here from what you might expect in the language. Notice that the first parameter is presented as a value, whereas the second parameter needs a label before it. The int2: before the second parameter is the external name for the second parameter. In Swift, all function parameters can have two names: an external and an internal name. In the add() method above, there are only internal names. 
 
-By default, the parameter names are just internal to the method. Formally,
-they are local parameter names. The names are not required when calling the
-method. This means that to call a method with this particular signature, we pass
-values as we would in languages such as Java.
+// By default, the parameter names are just internal to the method. Formally, they are local parameter names. Howver, in Swift 2, these internal names can also become the default external names that are used in method calls. In Swift 2, a method call does not require an external name for the first parameter, but it does for any other parameters. By default, the internal name becomes the external name. Thus, the method call above uses int2: as a prefix to the second parameter.
 
-Swift has a way to define a external name for a parameter that is used explain 
-what the purpose of the parameter is. This can be done by adding another name
-before the local parameter name. For the above example, we could write:
-
-*/
+// Swift has a way to define a external name for a parameter that is used explain what the purpose of the parameter is. This can be done by adding another name before the local parameter name. For the above example, we could write:
 
 func add(numberOne int1: Int, numberTwo int2: Int) -> Int {
    return int1 + int2
 }
 
-// To call this method, we include the external parameter names in the 
-// method call.
+// To call this method, we include the external parameter names in the method call.
 
 add(numberOne: 1, numberTwo: 2)
 
-/*
-
-The external parameter names can add clarity to what is being passed. This is
-something that has come over from the Objective-C approach and the various
-Objective-C APIs. In Objective-C, a good method name would be something that
-could be read as a sentence. An example using the add method could be: 
-
-*/
+// The external parameter names can add clarity to what is being passed. This is something that has come over from the Objective-C approach and the various Objective-C APIs. In Objective-C, a good method name would be something that could be read as a sentence. An example using the add method could be:
 
 func add(number int1: Int, toOtherNumber int2: Int) -> Int {
     return int1 + int2
@@ -78,20 +63,15 @@ func add(number int1: Int, toOtherNumber int2: Int) -> Int {
 // Activity
 // 2.1 How would you call this method? Type it in and try it.
 
-// 2.2 How would you define a function add where the first parameter does not
-//     have an external name, but the other parameter does?
+// 2.2 How would you define a function add where the first parameter does not have an external name, but the other parameter does?
 **************************************************/
 
-/*
 
-You don't always have think of two different names.
-If you have a good local parameter name that is also useful as an external 
-parameter name. As of Swift 2, you insert the name twice. 
- 
-In Swift 1, you could use the # character before the name.
-*/
+ // You don't always have think of two different names. If you have a good local parameter name that is also useful as an external parameter name. As of Swift 2, you insert the name twice. You only need to do this for the first parameter, because the other parameters will automatically use the internal name as an external name. 
 
-func add(doubleOne doubleOne: Double, doubleTwo: Double) -> Double {
+// In Swift 1, you could use the # character before the name.
+
+func addExternalNameExample(doubleOne doubleOne: Double, doubleTwo: Double) -> Double {
     return doubleOne + doubleTwo
 }
 
@@ -100,13 +80,11 @@ func add(doubleOne doubleOne: Double, doubleTwo: Double) -> Double {
 // 3.1 How would you call this method? Type it in an try it.
 **************************************************/
 
-// You have seen examples of the external parameter names when working with the tableView methods.
-// For example, you have seen the following method call.
+// You have seen examples of the external parameter names when working with the tableView methods. For example, you have seen the following method call.
 
 // tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
 // Here, the first parameter does not use an external name but the second parameter does. The aim is to make this readable, so that you could read out 'table view dequeue reusable cell with identifier for index path' - which is a description of what should happen. Look at other methods you are using - it is common that the first parameter doesn't use an external name.
-
 
 // Method parameters can also have default values.
 
@@ -125,8 +103,7 @@ setName(surname: "Taylor")
 ///
 ///////////////////////////////////////////////////////////////////////
 
-// A class is setup using an initialiser, which has the name init. It doesn't use the 
-// keyword func. 
+// A class is setup using an initialiser, which has the name init. It doesn't use the keyword func.
 
 class Circle {
  
@@ -142,18 +119,16 @@ class Circle {
 
 // You can have several init methods, providing alternative ways to initialise the object.
 
-// Initialisers (init methods) use external names by default, which is the same as 
-// the one specified for the internal name. You don't use the # to do this for initialisers.
-// This is because the names are significant to help differentiate one from another if there 
-// are multiple init methods for a single class.
+// Initialisers (init methods) use external names by default for all parameters, which is the same as the one specified for the internal name. This is because the names are significant to help differentiate one from another if there are multiple init methods for a single class.
 
 /*************************************************
 // Activity
-// 4.1 How would you create an instance of Circle? Type it in an try it.
+// 4.1 How would you create an instance of Circle? Type it in an try it. 
+//
+// Hint: don't call the let/var name as c, because that is used at the end of this playground, and will make it seem as though your line is an error.
 **************************************************/
 
-// If you don't want one of the parameters for init to use an external name, add the _ character 
-// before the name.
+// If you don't want one of the parameters for init to use an external name, add the _ character before the name.
 
 class Name {
     
@@ -239,7 +214,7 @@ func add(number: Int, toOtherNumber other: Int) -> Int {
 add(10, toOtherNumber: 10)
 
 // 3.1 
-add(doubleOne: 5.0, doubleTwo: 10.5)
+addExternalNameExample(doubleOne: 5.0, doubleTwo: 10.5)
 
 // 4.1 
 let c = Circle(x: 5, y: 10)

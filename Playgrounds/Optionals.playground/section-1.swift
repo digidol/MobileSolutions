@@ -7,7 +7,7 @@
 // This Playground looks at the different issues for Optionals. You can
 // edit and run the code in this window. 
 //
-// Neil Taylor, nst@aber.ac.uk, 3rd March 2015
+// Neil Taylor, nst@aber.ac.uk, 3rd March 2015 (minor update, 17th Feb 2016)
 
 // The following description is from The Swift Programming Language, by Apple.
 //
@@ -48,7 +48,7 @@ var moduleName: String
 moduleName = "Mobile Solutions"
 
 // What value does moduleName have when it is first defined? 
-// What happens if you insert a println statement on line 41 so that you 
+// What happens if you insert a println statement on line 47 so that you
 // can output the moduleName? 
 
 print(moduleName)
@@ -60,7 +60,7 @@ print(moduleName)
 // initial value of null to have been assigned. Swift doesn't do that.
 
 // What about numbers? The Integer type in Swift is Int. What happens if you use 
-// println to output the number on line 62?
+// println to output the number on line 66?
 
 var number: Int
 
@@ -95,8 +95,10 @@ number = 10
 
 var code: String?
 
-// What happens if you try to print out the code variable using println? Try it
-// out on the following line.
+// What happens if you try to print out the code variable using a print statement? 
+// Try it out on the following line.
+
+// YOUR CODE HERE
 
 // Did that work? 
 
@@ -108,24 +110,28 @@ var code: String?
 
 // YOUR CODE HERE
 
-// What is shown on the right-hand side of this panel? It is {Some: "Test"}. This 
-// means that code has a value, which is "Test". This is actually wrapped up 
-// inside the optional. That means that an optional is either the value nil, or 
-// it is a value of the specified type.
 
-// Add a println(code) above. What do you see printed? Is that what you would 
-// expect once this has been assigned a value?
+
+// What is shown on the right-hand side of this panel?
+
+// Add a print(code) above. What do you see printed? Is that what you would
+// expect once this has been assigned a value? 
+
+// The print() should show "Optional("Test")\n". This means that code has a value,
+// which is "Test". This is actually wrapped up inside the optional. That means 
+// that an optional is either the value nil, or it is a value of the specified type.
 
 // To access the value in an optional, we need to 'unwrap' the value. To do that, 
 // we use the ! operator. Uncomment the following line of code.
 
-//println(code!)
+//print(code!)
 
 // You will now see that the value is shown as "Test" - we have direct access to 
-// the value.
+// the value. Actually, you will see that the value is "Test\n", highlighting that 
+// print includes a newline character by default.
 
 // What happens if you go back to your assignment for code and set it to nil? 
-// What happens in the printline on line 119?
+// What happens in the print output on (or around) line 127?
 
 // We can only unwrap a value when one has been assigned. If we try to unwrap a 
 // value that doesn't have a value, we will get an error.
@@ -173,8 +179,7 @@ print(describeTheOptionalString("Test"))
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-// We can use the if statement with either a variable or a constant to unwrap 
-// the value, if one exists. Look at the following example.
+// We can use the if statement with either a variable or a constant to unwrap the value, if one exists. Look at the following example.
 
 if let c = code {
    print("The value for code is \(c)")
@@ -183,12 +188,9 @@ else {
    print("There is no value for code")
 }
 
-// The if statement declares a constant (using let) called c and attempts to assign 
-// the unwrapped value to it. If there is a value, we can use c to refer to that value 
-// within the if statement body. If there isn't a value (i.e. code == null), then we 
-// can choose to do something with the else part of the statement.
+// The if statement declares a constant (using let) called c and attempts to assign the unwrapped value to it. If there is a value, we can use c to refer to that value within the if statement body. If there isn't a value (i.e. code == null), then we can choose to do something with the else part of the statement.
 
-// What happens if you change the let to a var in the above code?
+// What happens if you change the let to a var in the above code? It should still work. However, note that in a program (rather than a playground) you will probably get a warning (this will depend on the version of Xcode / Swift used. the warning would encourage you to use a let, because the variable c is not changed in the code after it has been assigned.
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -197,35 +199,23 @@ else {
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-// There are times when we want to allow a variable to be nil, but in the majority 
-// of cases, we expect the variable or constant to have a value. In that situation,
-// we can avoid having to use the ! to unwrap each time. 
-// 
-// Instead, we use the ! on the variable or constant declaration to say that we 
-// generally expect that there is a value and it should be an error if there isn't 
-// one. 
-// 
-// We have already seen an example with the @IBOutlet items that we have been 
-// adding to the ViewController classes. An example is below.
+// There are times when we want to allow a variable to be nil, but in the majority of cases, we expect the variable or constant to have a value. In that situation, we can avoid having to use the ! to unwrap each time. 
 
-var label: UILabel! = UILabel()
+// Instead, we use the ! on the variable or constant declaration to say that we generally expect that there is a value and it should be an error if there isn't one.
 
-// The above line sets label to nil. As the view is loaded, the corresponding label 
-// will be created and the label will point to that new instance. The ! means that 
-// we can just use the variable name in the rest of the code rather than having to 
-// type label! to get the wrapped value.
+// We have already seen an example with the @IBOutlet items that we have been adding to the ViewController classes. An example is below.
 
-// With the above definition, what gets output as a result of the following line?
+var label: UILabel!
 
-print(label)
+// The above line sets label to nil. As the view is loaded, the corresponding label  will be created and the label will point to that new instance. The ! means that we can just use the variable name in the rest of the code rather than having to type label! to get the wrapped value.
 
-// What output do you get from the print if you modify the definition on line 209?
-// Assign an initial value, i.e. = UILabel()
+// Uncomment the following line. With the above definition, what gets output as a result of the following line?
 
-// Apple's manual states that you should only use the Implicitly Unwrapped technique 
-// if you don't normally expect the value to be nil at some point during its normal
-// lifecycle. If the value could be nil and you need to check for that, you should 
-// use the normal optional symbol ?
+//print(label)
+
+// What output do you get from the print if you modify the definition on line 208? Assign an initial value, i.e. = UILabel()
+
+// Apple's manual states that you should only use the Implicitly Unwrapped technique if you don't normally expect the value to be nil at some point during its normal lifecycle. If the value could be nil and you need to check for that, you should use the normal optional symbol ?
 
 /////////////////////////////////////////////////////////////////////////////////
 //
@@ -233,36 +223,31 @@ print(label)
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-// There are times when we want to access a property, method or subscript on an 
-// optional, but we don't know if the optional is nil or not. Therefore, we 
-// would need to test if it is safe to do that. 
-//
-// For example: Given the class Film, we might want to find access the 
-// lowercaseString version of the name. The name is specified as an optional String.
+// There are times when we want to access a property, method or subscript on an optional, but we don't know if the optional is nil or not. Therefore, we would need to test if it is safe to do that.
+
+// For example: Given the class Film, we might want to find access the lowercaseString version of the name. The name is specified as an optional String.
 
 class Film {
     var name : String?
+    var actors: [String]?
 }
+
 
 var f = Film()
 
-// The following code could be used to safely unwrap the value, if one exists. 
-// Set a value for name to see that this works correctly.
+// The following code could be used to safely unwrap the value, if one exists. Set a value for name to see that this works correctly.
 
 if f.name != nil {
    print("The name in lower case is: \(f.name!.lowercaseString)")
 }
 
-// That isn't so bad in this example, but what if we had a chain of several items that 
-// could be optional? We can use Optional Chainging to only access the property 
-// lowercaseString if the name contains a value. As an example, compare the following:
+// What if we had a chain of several items that could be optional? We can use Optional Chaining to only access the property lowercaseString if the name contains a value. As an example, compare the following:
 
 if let test = f.name?.lowercaseString {
    print(test)
 }
 
-// We have already seen this at the end of the slides for Session 1. We were using 
-// Optional Chaining to determine when we can access this selectedSegmentIndex.
+// We have already seen this at the end of the slides for Session 1. We were using Optional Chaining to determine when we can access this selectedSegmentIndex.
 
 func buttonPressed(sender: AnyObject) {
     
@@ -282,14 +267,11 @@ func buttonPressed(sender: AnyObject) {
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-// C, and C-inspired, languages include the conditional operator to determine 
-// whether to use one value or another. Swift introduces a shorthand for this 
-// situation, called the Nil Coalescing Operator 
+// C, and C-inspired, languages include the conditional operator to determine whether to use one value or another. Swift introduces a shorthand for this situation, called the Nil Coalescing Operator. 
 
 // The C conditional operator is (some test) ? (value if true) : (value if false)
 
-// Given an optional String, a, we might want to return a value if a contains 
-// a value, or return a default value. If using the conditional operator, we might write:
+// Given an optional String, a, we might want to return a value if a contains a value, or return a default value. If using the conditional operator, we might write:
 
 var a: String?
 
@@ -306,18 +288,11 @@ var theValue = a ?? "The default response"
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-// You might take a view that the above looks similar to the use of null in a 
-// language like Java. Up to a point, yes that might seem like a fair 
-// observation. However, Optional Chaining is a good example of the ability to
-// tidy up some expressions that would otherwise need if statements.
+// You might take a view that the above looks similar to the use of null in a language like Java. Up to a point, yes that might seem like a fair observation. However, Optional Chaining is a good example of the ability to tidy up some expressions that would otherwise need if statements.
 
-// The other advantage is that, unlike Java, this can be applied to the basic 
-// value types too, e.g. Int and Double. Instead of having to set a value of -1 
-// to represent 'no value' for an Int, we can actually state that it is optional, 
-// is set to nil and therefore truly has 'no value'. 
+// The other advantage is that, unlike Java, this can be applied to the basic value types too, e.g. Int and Double. Instead of having to set a value of -1 to represent 'no value' for an Int, we can actually state that it is optional, is set to nil and therefore truly has 'no value'.
 
-// Write some code below to experiment with using an optional Int variable. Does 
-// it work in the same way as that above? 
+// Write some code below to experiment with using an optional Int variable. Does it work in the same way as that above?
 
 // ------------------------------------ END -------------------------------------- 
 

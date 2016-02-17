@@ -26,7 +26,7 @@ var languages: [String] = ["Java", "C", "C++", "C#", "Swift"]
 // work?
 
 // To declare an empty array, just use [] or [String]()
-
+k
 var emptyArray: [String] = []
 
 var anotherEmptyArray = [String]()
