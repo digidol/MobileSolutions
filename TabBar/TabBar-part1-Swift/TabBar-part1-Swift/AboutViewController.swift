@@ -30,21 +30,21 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
     
     func sendTweet() {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-            var tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            let tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             tweetSheet.setInitialText("This is an example tweet.")
             self.presentViewController(tweetSheet, animated: true, completion: nil)
         } else {
-            println("error")
+            print("error")
         }
     }
     
     func sendFacebookStatusMessage() {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
-            var tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            let tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             tweetSheet.setInitialText("Look at this nice picture!")
             self.presentViewController(tweetSheet, animated: true, completion: nil)
         } else {
-            println("error")
+            print("error")
         }
     }
     
@@ -57,12 +57,12 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
         case 2:
             sendFacebookStatusMessage()
         default:
-            println("should not be here")
+            print("should not be here")
         }
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        println("should handle the result")
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        print("should handle the result")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

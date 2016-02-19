@@ -78,7 +78,7 @@ class MapsViewController: UIViewController {
         case 2:
             mapView.mapType = .Satellite
         default:
-            println("Error?")
+            print("Error?")
         }
     }
     

@@ -35,12 +35,12 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        println("Handle the load operation...")
+        print("Handle the load operation...")
         showNetworkActivityIndicator(false)
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
-        println("failed... \(error)")
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        print("failed... \(error)")
         showNetworkActivityIndicator(false)
     }
 }

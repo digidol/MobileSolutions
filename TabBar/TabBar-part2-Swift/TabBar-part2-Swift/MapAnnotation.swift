@@ -13,7 +13,7 @@ class MapAnnotation: NSObject, MKAnnotation {
     
     var coordinate = CLLocationCoordinate2DMake(0, 0)
     
-    var title: String!
+    var title: String?
     
     init(coordinate: CLLocationCoordinate2D, title: String) {
         super.init()

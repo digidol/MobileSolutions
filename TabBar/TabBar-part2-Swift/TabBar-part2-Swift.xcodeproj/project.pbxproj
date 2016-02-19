@@ -208,6 +208,8 @@
 		6B0699DB1AAFA790001F10C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Aberystwyth University";
 				TargetAttributes = {

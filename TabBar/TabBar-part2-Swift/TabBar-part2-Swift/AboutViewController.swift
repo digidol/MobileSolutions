@@ -43,19 +43,19 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
             tweetSheet.completionHandler = {
                 switch $0 {
                 case .Cancelled:
-                    println("cancelled")
+                    print("cancelled")
                 case .Done:
-                    println("done")
+                    print("done")
                 }
             }
             
             // Using a closure to handle a notification when the sheet has been 
             // displayed. We could also just pass in nil if we don't care.
             self.presentViewController(tweetSheet, animated: true, completion: {
-               println("this tweet was presented.")
+               print("this tweet was presented.")
             })
         } else {
-            println("error")
+            print("error")
             
             // Create a popup message, with a title, message and button. 
             // The UIAlertView can tell you which button was pressed. To find out, 
@@ -70,7 +70,7 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
     // This is one of the possible methods that you could respond to in the 
     // UIAlertViewDelegate protocol.
     func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        println("Clicked the button with index \(buttonIndex)")
+        print("Clicked the button with index \(buttonIndex)")
     }
     
     func sendFacebookStatusMessage() {
@@ -79,7 +79,7 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
             facebookSheet.setInitialText("Look at this nice picture!")
             self.presentViewController(facebookSheet, animated: true, completion: nil)
         } else {
-            println("error")
+            print("error")
         }
     }
     
@@ -92,12 +92,12 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
         case 2:
             sendFacebookStatusMessage()
         default:
-            println("should not be here")
+            print("should not be here")
         }
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        println("should handle the result")
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        print("should handle the result")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
