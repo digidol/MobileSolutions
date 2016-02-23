@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zsX-X4-e0e">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image-->
+        <scene sceneID="bfk-PM-ycA">
+            <objects>
+                <viewController id="TJU-kV-egZ" customClass="ImageDisplayViewController" customModule="QuackCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ewh-Ns-fYD"/>
+                        <viewControllerLayoutGuide type="bottom" id="V5E-qC-sTu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0QW-ye-KH5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AberQuack" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-wE-0NZ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dz4-X5-fnN">
+                                <rect key="frame" x="0.0" y="519" width="600" height="61"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJb-Te-dg5">
+                                        <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Igw-Y0-5gH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksy-xY-Wud">
+                                        <rect key="frame" x="8" y="23" width="133" height="30"/>
+                                        <state key="normal" title="Change Image Title"/>
+                                        <connections>
+                                            <action selector="changeImageName:" destination="TJU-kV-egZ" eventType="touchUpInside" id="Ari-rp-TLQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="1iD-75-Xj7"/>
+                                    <constraint firstAttribute="trailing" secondItem="LJb-Te-dg5" secondAttribute="trailing" constant="8" id="YeR-er-n5D"/>
+                                    <constraint firstItem="LJb-Te-dg5" firstAttribute="leading" secondItem="Dz4-X5-fnN" secondAttribute="leading" constant="8" id="ZXo-g2-zlE"/>
+                                    <constraint firstItem="LJb-Te-dg5" firstAttribute="top" secondItem="Dz4-X5-fnN" secondAttribute="top" constant="8" id="e68-r1-OtB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="6J7-wE-0NZ" secondAttribute="trailing" constant="-20" id="936-1y-9Zy"/>
+                            <constraint firstItem="Dz4-X5-fnN" firstAttribute="trailing" secondItem="6J7-wE-0NZ" secondAttribute="trailing" id="DcT-va-SeB"/>
+                            <constraint firstItem="V5E-qC-sTu" firstAttribute="top" secondItem="6J7-wE-0NZ" secondAttribute="bottom" id="Ma6-ku-YPr"/>
+                            <constraint firstItem="V5E-qC-sTu" firstAttribute="top" secondItem="Dz4-X5-fnN" secondAttribute="bottom" constant="20" id="XYw-UJ-mad"/>
+                            <constraint firstItem="6J7-wE-0NZ" firstAttribute="top" secondItem="Ewh-Ns-fYD" secondAttribute="bottom" id="pVX-tC-oSW"/>
+                            <constraint firstItem="6J7-wE-0NZ" firstAttribute="leading" secondItem="0QW-ye-KH5" secondAttribute="leadingMargin" constant="-20" id="qcK-Hn-K5U"/>
+                            <constraint firstItem="Dz4-X5-fnN" firstAttribute="leading" secondItem="6J7-wE-0NZ" secondAttribute="leading" id="qrp-BE-bNV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image" id="Ulf-hu-KBe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="yeO-ys-X1N"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="image" destination="6J7-wE-0NZ" id="BUB-Y7-lxZ"/>
+                        <outlet property="imageName" destination="LJb-Te-dg5" id="krm-kk-HVv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oo8-x2-ZfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277" y="581"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6lp-OM-TE1">
+            <objects>
+                <navigationController id="zsX-X4-e0e" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a62-KE-g3L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ig6-VN-VRF" kind="relationship" relationship="rootViewController" id="9ph-h3-cjT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0NO-cc-N5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="581"/>
+        </scene>
+        <!--Quack Cam-->
+        <scene sceneID="NVz-H5-xSv">
+            <objects>
+                <collectionViewController id="ig6-VN-VRF" customClass="ImagesCollectionViewController" customModule="QuackCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="v4b-fp-K3O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.61960784313725492" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IoR-g3-wVg">
+                            <size key="itemSize" width="80" height="80"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="takePicture" id="3uZ-zj-gPh">
+                                <rect key="frame" x="0.0" y="64" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rF1-B9-B5M">
+                                            <rect key="frame" x="29" y="29" width="22" height="22"/>
+                                            <connections>
+                                                <action selector="addImage:" destination="ig6-VN-VRF" eventType="touchUpInside" id="Qty-Nd-tBR"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="rF1-B9-B5M" firstAttribute="centerY" secondItem="3uZ-zj-gPh" secondAttribute="centerY" id="4ee-IM-ns1"/>
+                                    <constraint firstItem="rF1-B9-B5M" firstAttribute="centerX" secondItem="3uZ-zj-gPh" secondAttribute="centerX" id="av5-ZW-w4J"/>
+                                </constraints>
+                                <size key="customSize" width="80" height="80"/>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="image" id="t5K-vI-WcM" customClass="ImageCollectionViewCell" customModule="QuackCam" customModuleProvider="target">
+                                <rect key="frame" x="86.5" y="64" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AberQuack" translatesAutoresizingMaskIntoConstraints="NO" id="7iD-7B-B5M">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7iD-7B-B5M" secondAttribute="trailing" id="7pX-1S-dxF"/>
+                                    <constraint firstItem="7iD-7B-B5M" firstAttribute="leading" secondItem="t5K-vI-WcM" secondAttribute="leading" id="N4h-TM-f9Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="7iD-7B-B5M" secondAttribute="bottom" id="h4y-hm-2sm"/>
+                                    <constraint firstItem="7iD-7B-B5M" firstAttribute="top" secondItem="t5K-vI-WcM" secondAttribute="top" id="udV-oy-LBS"/>
+                                </constraints>
+                                <size key="customSize" width="80" height="80"/>
+                                <connections>
+                                    <outlet property="imageView" destination="7iD-7B-B5M" id="N5M-zL-4yh"/>
+                                    <segue destination="TJU-kV-egZ" kind="show" id="7Zx-xm-DoM"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ig6-VN-VRF" id="BFh-Jd-ewX"/>
+                            <outlet property="delegate" destination="ig6-VN-VRF" id="Stu-Hc-0rc"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Quack Cam" id="JZs-Ad-Fpn">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="8bc-MX-KtR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="1sA-cC-Mov">
+                                <rect key="frame" x="558" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="vpL-DQ-SZp" kind="presentation" id="SKh-LD-4zj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-Z8-myR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="581"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="hql-z9-VfS">
+            <objects>
+                <viewController id="vpL-DQ-SZp" customClass="AboutViewController" customModule="QuackCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dyb-45-hUa"/>
+                        <viewControllerLayoutGuide type="bottom" id="cvc-P6-0gZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0sS-5y-WAu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfv-Lh-ux5">
+                                <rect key="frame" x="0.0" y="74" width="600" height="526"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTd-9P-ebg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="About" prompt=" " id="Y0d-FX-MKA">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="uiy-xN-ByH">
+                                            <connections>
+                                                <action selector="doneDisplay:" destination="vpL-DQ-SZp" id="mg5-U9-GAO"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jfv-Lh-ux5" secondAttribute="trailing" constant="-20" id="1Dr-W0-O5c"/>
+                            <constraint firstItem="jfv-Lh-ux5" firstAttribute="leading" secondItem="0sS-5y-WAu" secondAttribute="leadingMargin" constant="-20" id="54T-yQ-tvW"/>
+                            <constraint firstItem="vTd-9P-ebg" firstAttribute="leading" secondItem="0sS-5y-WAu" secondAttribute="leadingMargin" constant="-20" id="GhP-1K-cR9"/>
+                            <constraint firstItem="vTd-9P-ebg" firstAttribute="top" secondItem="Dyb-45-hUa" secondAttribute="bottom" id="H8n-oN-ote"/>
+                            <constraint firstItem="vTd-9P-ebg" firstAttribute="top" secondItem="Dyb-45-hUa" secondAttribute="bottom" constant="-20" id="Oqq-6T-TNh"/>
+                            <constraint firstItem="jfv-Lh-ux5" firstAttribute="top" secondItem="vTd-9P-ebg" secondAttribute="bottom" id="Wal-HH-e2k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vTd-9P-ebg" secondAttribute="trailing" constant="-20" id="cyM-JN-0o5"/>
+                            <constraint firstItem="cvc-P6-0gZ" firstAttribute="top" secondItem="jfv-Lh-ux5" secondAttribute="bottom" id="nG4-Vp-Fkz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="H8n-oN-ote"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="jfv-Lh-ux5" id="gdb-tb-qd4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAg-0H-BIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277" y="-88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AberQuack" width="3264" height="2448"/>
+    </resources>
+</document>

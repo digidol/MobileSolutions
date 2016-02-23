@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B64AAA31C751AC6005113D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64AAA21C751AC6005113D9 /* AppDelegate.swift */; };
+		6B64AAA81C751AC6005113D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B64AAA61C751AC6005113D9 /* Main.storyboard */; };
+		6B64AAAA1C751AC6005113D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B64AAA91C751AC6005113D9 /* Assets.xcassets */; };
+		6B64AAAD1C751AC6005113D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B64AAAB1C751AC6005113D9 /* LaunchScreen.storyboard */; };
+		6B64AABB1C7520D2005113D9 /* ImagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64AABA1C7520D2005113D9 /* ImagesCollectionViewController.swift */; };
+		6B64AABD1C7534C0005113D9 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64AABC1C7534C0005113D9 /* ImageDisplayViewController.swift */; };
+		6B9040321C7640DE000FC1D6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9040311C7640DE000FC1D6 /* AVFoundation.framework */; };
+		6B9040341C766F7F000FC1D6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9040331C766F7F000FC1D6 /* AboutViewController.swift */; };
+		6B9040361C767066000FC1D6 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 6B9040351C767066000FC1D6 /* about.html */; };
+		6B9040381C7670DC000FC1D6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9040371C7670DC000FC1D6 /* Utilities.swift */; };
+		6BF77F341C76FC42008A4AC6 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF77F331C76FC42008A4AC6 /* ImageData.swift */; };
+		6BFB8D901C791FBB00509C4C /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB8D8F1C791FBB00509C4C /* ImageCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B64AA9F1C751AC6005113D9 /* QuackCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuackCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B64AAA21C751AC6005113D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6B64AAA71C751AC6005113D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B64AAA91C751AC6005113D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B64AAAC1C751AC6005113D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6B64AAAE1C751AC6005113D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B64AABA1C7520D2005113D9 /* ImagesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewController.swift; sourceTree = "<group>"; };
+		6B64AABC1C7534C0005113D9 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
+		6B9040311C7640DE000FC1D6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6B9040331C766F7F000FC1D6 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		6B9040351C767066000FC1D6 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		6B9040371C7670DC000FC1D6 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		6BF77F331C76FC42008A4AC6 /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		6BFB8D8F1C791FBB00509C4C /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B64AA9C1C751AC6005113D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B9040321C7640DE000FC1D6 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B64AA961C751AC6005113D9 = {
+			isa = PBXGroup;
+			children = (
+				6B9040311C7640DE000FC1D6 /* AVFoundation.framework */,
+				6B64AAA11C751AC6005113D9 /* QuackCam */,
+				6B64AAA01C751AC6005113D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B64AAA01C751AC6005113D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B64AA9F1C751AC6005113D9 /* QuackCam.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B64AAA11C751AC6005113D9 /* QuackCam */ = {
+			isa = PBXGroup;
+			children = (
+				6B64AAA21C751AC6005113D9 /* AppDelegate.swift */,
+				6B64AAA61C751AC6005113D9 /* Main.storyboard */,
+				6B64AAA91C751AC6005113D9 /* Assets.xcassets */,
+				6B64AAAB1C751AC6005113D9 /* LaunchScreen.storyboard */,
+				6B64AAAE1C751AC6005113D9 /* Info.plist */,
+				6B64AABA1C7520D2005113D9 /* ImagesCollectionViewController.swift */,
+				6B64AABC1C7534C0005113D9 /* ImageDisplayViewController.swift */,
+				6B9040331C766F7F000FC1D6 /* AboutViewController.swift */,
+				6B9040351C767066000FC1D6 /* about.html */,
+				6B9040371C7670DC000FC1D6 /* Utilities.swift */,
+				6BF77F331C76FC42008A4AC6 /* ImageData.swift */,
+				6BFB8D8F1C791FBB00509C4C /* ImageCollectionViewCell.swift */,
+			);
+			path = QuackCam;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B64AA9E1C751AC6005113D9 /* QuackCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B64AAB11C751AC6005113D9 /* Build configuration list for PBXNativeTarget "QuackCam" */;
+			buildPhases = (
+				6B64AA9B1C751AC6005113D9 /* Sources */,
+				6B64AA9C1C751AC6005113D9 /* Frameworks */,
+				6B64AA9D1C751AC6005113D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuackCam;
+			productName = QuackCam;
+			productReference = 6B64AA9F1C751AC6005113D9 /* QuackCam.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B64AA971C751AC6005113D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Aberystwyth University";
+				TargetAttributes = {
+					6B64AA9E1C751AC6005113D9 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 6B64AA9A1C751AC6005113D9 /* Build configuration list for PBXProject "QuackCam" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B64AA961C751AC6005113D9;
+			productRefGroup = 6B64AAA01C751AC6005113D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B64AA9E1C751AC6005113D9 /* QuackCam */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B64AA9D1C751AC6005113D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B9040361C767066000FC1D6 /* about.html in Resources */,
+				6B64AAAD1C751AC6005113D9 /* LaunchScreen.storyboard in Resources */,
+				6B64AAAA1C751AC6005113D9 /* Assets.xcassets in Resources */,
+				6B64AAA81C751AC6005113D9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B64AA9B1C751AC6005113D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B64AABD1C7534C0005113D9 /* ImageDisplayViewController.swift in Sources */,
+				6B64AABB1C7520D2005113D9 /* ImagesCollectionViewController.swift in Sources */,
+				6B9040341C766F7F000FC1D6 /* AboutViewController.swift in Sources */,
+				6BFB8D901C791FBB00509C4C /* ImageCollectionViewCell.swift in Sources */,
+				6B9040381C7670DC000FC1D6 /* Utilities.swift in Sources */,
+				6B64AAA31C751AC6005113D9 /* AppDelegate.swift in Sources */,
+				6BF77F341C76FC42008A4AC6 /* ImageData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6B64AAA61C751AC6005113D9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B64AAA71C751AC6005113D9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6B64AAAB1C751AC6005113D9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B64AAAC1C751AC6005113D9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B64AAAF1C751AC6005113D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6B64AAB01C751AC6005113D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B64AAB21C751AC6005113D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QuackCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.app.QuackCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6B64AAB31C751AC6005113D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QuackCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.app.QuackCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B64AA9A1C751AC6005113D9 /* Build configuration list for PBXProject "QuackCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B64AAAF1C751AC6005113D9 /* Debug */,
+				6B64AAB01C751AC6005113D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B64AAB11C751AC6005113D9 /* Build configuration list for PBXNativeTarget "QuackCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B64AAB21C751AC6005113D9 /* Debug */,
+				6B64AAB31C751AC6005113D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B64AA971C751AC6005113D9 /* Project object */;
+}
