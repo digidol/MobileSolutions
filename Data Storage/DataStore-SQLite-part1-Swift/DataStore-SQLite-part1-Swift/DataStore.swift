@@ -23,7 +23,7 @@ class DataStore {
     init() {
         if let filePath = prepareDatabasePath() {
         
-           var result = sqlite3_open(filePath, &database)
+           let result = sqlite3_open(filePath, &database)
         
            if result != SQLITE_OK {
               hardFail("Unable to open the database")
@@ -42,19 +42,19 @@ class DataStore {
         let documentsFolderPath =
            NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
-        let sqliteFilePath = documentsFolderPath.stringByAppendingPathComponent("iOSDevUK2014.sqlite3")
+        let sqliteFilePath = documentsFolderPath.stringByAppendingString("iOSDevUK2014.sqlite3")
         
         if !NSFileManager.defaultManager().fileExistsAtPath(sqliteFilePath) {
             let bundle = NSBundle.mainBundle()
             let bundlePath = bundle.pathForResource("iOSDevUK2014", ofType: "sqlite3")
             
-            var error: NSError?
-            if NSFileManager.defaultManager().copyItemAtPath(bundlePath!,
-                                                             toPath: sqliteFilePath, error: &error) {
-                println("File copied");
+            do {
+                try NSFileManager.defaultManager().copyItemAtPath(bundlePath!,
+                                                             toPath: sqliteFilePath)
+                print("File copied")
             }
-            else {
-                println("Unable to copy file: \(error)")
+            catch let error as NSError {
+                print("Unable to copy file: \(error)")
                 return nil
             }
         }
@@ -70,7 +70,7 @@ class DataStore {
      */
     private func hardFail(message: String) {
         sqlite3_close(database)
-        println(message)
+        print(message)
         abort() // handle the error in a better way...
     }
     
@@ -96,13 +96,13 @@ class DataStore {
   
         var statement: COpaquePointer = nil
         
-        var result = sqlite3_prepare_v2(database, query, -1, &statement, nil)
+        let result = sqlite3_prepare_v2(database, query, -1, &statement, nil)
         if result == SQLITE_OK {
             var resultList = [SessionItem]()
             
             while sqlite3_step(statement) == SQLITE_ROW {
                 
-                var sessionItem = SessionItem()
+                let sessionItem = SessionItem()
                 sessionItem.id = getTextValue(statement, atColumnIndex: 0)
                 sessionItem.title = getTextValue(statement, atColumnIndex: 1)
                 sessionItem.content = getTextValue(statement, atColumnIndex: 2)
@@ -131,19 +131,19 @@ class DataStore {
         
         var statement: COpaquePointer = nil
         
-        var result = sqlite3_prepare_v2(database, query, -1, &statement, nil)
+        let result = sqlite3_prepare_v2(database, query, -1, &statement, nil)
         if result == SQLITE_OK {
             var resultList = [SessionItem]()
             
             while sqlite3_step(statement) == SQLITE_ROW {
                 
-                var sessionItem = SessionItem()
+                let sessionItem = SessionItem()
                 sessionItem.id = getTextValue(statement, atColumnIndex: 0)
                 sessionItem.title = getTextValue(statement, atColumnIndex: 1)
                 sessionItem.content = getTextValue(statement, atColumnIndex: 2)
                 sessionItem.dayId = Int(sqlite3_column_int(statement, 3))
                 
-                var location = Location()
+                let location = Location()
                 location.id = getTextValue(statement, atColumnIndex: 4)
                 location.title = getTextValue(statement, atColumnIndex: 5)
                 location.latitude = Double(sqlite3_column_double(statement, 6))

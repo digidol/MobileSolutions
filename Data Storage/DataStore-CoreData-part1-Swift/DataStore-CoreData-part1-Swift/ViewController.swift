@@ -39,10 +39,8 @@ class ViewController: UIViewController {
      */
     func createData() {
         
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
-        
-        var error: NSError?
         
         let result = getSpeakerEntities()
         
@@ -57,15 +55,17 @@ class ViewController: UIViewController {
                 aSpeaker.surname = "Taylor"
                 aSpeaker.biography = "This is a longer bit of text..."
                 
-                if !managedContext.save(&error) {
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
                     NSLog("Could not save data \(error)")
                 }
             }
             else {
                 
-                println("We have \(speakers.count) speakers")
+                print("We have \(speakers.count) speakers")
                 for speaker in speakers {
-                    println("Speaker is: \(speaker.forename) \(speaker.surname) email: \(speaker.email) short bio: \(speaker.biography) with number of talks: \(speaker.talks.count)")
+                    print("Speaker is: \(speaker.forename) \(speaker.surname) email: \(speaker.email) short bio: \(speaker.biography) with number of talks: \(speaker.talks.count)")
                 }
             }
         }
@@ -91,14 +91,15 @@ class ViewController: UIViewController {
         //    NSSortDescriptor(key: "surname", ascending: true)
         //]
         
-        var error: NSError?
-        let result = managedContext.executeFetchRequest(speakerFetch, error: &error) as [Speaker]?
-        
-        if error != nil {
-            println("Error accessing information: \(error)")
+        do {
+            let result = try managedContext.executeFetchRequest(speakerFetch) as? [Speaker]
+            return result
+        }
+        catch let error as NSError {
+            print("Error accessing information: \(error)")
         }
         
-        return result;
+        return nil;
     }
     
     /**
@@ -141,7 +142,7 @@ class ViewController: UIViewController {
             return count
         }
         else {
-            println("Error accessing the count: \(error)")
+            print("Error accessing the count: \(error)")
             return 0;
         }
     }
@@ -151,19 +152,22 @@ class ViewController: UIViewController {
      * details for a new speaker.
      */
     @IBAction func addSpeakerDetails(segue: UIStoryboardSegue) {
-        println("Adding speaker")
+        print("Adding speaker")
         if let controller = segue.sourceViewController as? SpeakerInfoViewController {
             
             let speakerEntity = NSEntityDescription.entityForName("Speaker", inManagedObjectContext: managedContext)
             let speaker = Speaker(entity: speakerEntity!, insertIntoManagedObjectContext: managedContext)
             
-            speaker.forename = controller.forename.text
-            speaker.surname = controller.surname.text
-            speaker.email = controller.email.text
+            speaker.forename = controller.forename.text!
+            speaker.surname = controller.surname.text!
+            speaker.email = controller.email.text!
             speaker.biography = controller.biography.text
             
             var error: NSError?
-            if !managedContext.save(&error) {
+            do {
+                try managedContext.save()
+            } catch let error1 as NSError {
+                error = error1
                 NSLog("Could not save data \(error)")
             }
             updateEntityCount()
@@ -183,7 +187,7 @@ class ViewController: UIViewController {
      * the modal view to enter details for a new speaker.
      */
     @IBAction func cancelAddSpeakerDetails(segue: UIStoryboardSegue) {
-        println("The operation was cancelled")
+        print("The operation was cancelled")
     }
     
     /**
@@ -199,20 +203,12 @@ class ViewController: UIViewController {
         let predicate = NSPredicate(format: "email == %@", email)
         speakerFetch.predicate = predicate
         
-        var error: NSError?
-        
-        let speakerList = managedContext.executeFetchRequest(speakerFetch, error: &error)
-        
-        if error == nil {
-            if let speakers = speakerList {
-                return speakers[0] as? Speaker
-            }
+        do {
+            let speakerList = try managedContext.executeFetchRequest(speakerFetch)
+            return speakerList[0] as? Speaker
             
-            // error with the query
-            return nil
-        }
-        else {
-            println("Error accessing the speaker for email \(email): \(error)")
+        } catch let error as NSError {
+            print("Error accessing the speaker for email \(email): \(error)")
             return nil;
         }
     }
@@ -221,7 +217,7 @@ class ViewController: UIViewController {
      * This method will add a talk to the speaker who has the specified email address.
      */
     @IBAction func addTalk(sender: AnyObject) {
-        
+        print("Adding a talk...")
         if let speaker = getSpeakerWithEmail("nst@aber.ac.uk") {
         
             let talkEntity = NSEntityDescription.entityForName("Talk", inManagedObjectContext: managedContext)
@@ -233,13 +229,16 @@ class ViewController: UIViewController {
             // The talks property for Speaker is an instance of NSSet, which cannot be changed. 
             // The solution is to create a copy that can be changed (a mutableCopy). 
             // You then add the object to the set and then copy it back, casting it as a NSSet.
-            var talks = speaker.talks.mutableCopy() as NSMutableSet
+            let talks = speaker.talks.mutableCopy() as! NSMutableSet
             talks.addObject(talk)
             speaker.talks = talks as NSSet
             
-            var error: NSError?
-            if !managedContext.save(&error) {
-                println("Cannot save talk data, error: \(error)")
+            do {
+                try managedContext.save()
+                print("Talk added")
+                
+            } catch let error as NSError {
+                print("Cannot save talk data, error: \(error)")
             }
         }
     }

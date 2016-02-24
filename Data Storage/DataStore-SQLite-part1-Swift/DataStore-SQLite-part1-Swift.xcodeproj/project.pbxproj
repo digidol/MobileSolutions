@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B2D2B7D1C7D7B21002FFA79 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2D2B7C1C7D7B21002FFA79 /* libsqlite3.tbd */; };
 		6BA73FD81AB6431200BC1672 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA73FD71AB6431200BC1672 /* AppDelegate.swift */; };
 		6BA73FDA1AB6431200BC1672 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA73FD91AB6431200BC1672 /* ViewController.swift */; };
 		6BA73FDD1AB6431200BC1672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA73FDB1AB6431200BC1672 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		6BA73FEE1AB6431200BC1672 /* DataStore_SQLite_part1_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA73FED1AB6431200BC1672 /* DataStore_SQLite_part1_SwiftTests.swift */; };
 		6BA73FF81AB6464700BC1672 /* iOSDevUK2014.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6BA73FF71AB6464700BC1672 /* iOSDevUK2014.sqlite3 */; };
 		6BA73FFA1AB6466D00BC1672 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA73FF91AB6466D00BC1672 /* DataStore.swift */; };
-		6BA73FFC1AB649D100BC1672 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA73FFB1AB649D100BC1672 /* libsqlite3.dylib */; };
 		6BA740021AB64CD800BC1672 /* SessionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA740011AB64CD800BC1672 /* SessionItem.swift */; };
 		6BA740041AB64D5400BC1672 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA740031AB64D5400BC1672 /* Location.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B2D2B7C1C7D7B21002FFA79 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		6BA73FD21AB6431200BC1672 /* DataStore-SQLite-part1-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DataStore-SQLite-part1-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA73FD61AB6431200BC1672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BA73FD71AB6431200BC1672 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		6BA73FED1AB6431200BC1672 /* DataStore_SQLite_part1_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore_SQLite_part1_SwiftTests.swift; sourceTree = "<group>"; };
 		6BA73FF71AB6464700BC1672 /* iOSDevUK2014.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iOSDevUK2014.sqlite3; sourceTree = "<group>"; };
 		6BA73FF91AB6466D00BC1672 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		6BA73FFB1AB649D100BC1672 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6BA73FFD1AB64A6900BC1672 /* DataStore-SQLite-part1-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataStore-SQLite-part1-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		6BA740011AB64CD800BC1672 /* SessionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionItem.swift; sourceTree = "<group>"; };
 		6BA740031AB64D5400BC1672 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BA73FFC1AB649D100BC1672 /* libsqlite3.dylib in Frameworks */,
+				6B2D2B7D1C7D7B21002FFA79 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 		6BA73FC91AB6431200BC1672 = {
 			isa = PBXGroup;
 			children = (
-				6BA73FFB1AB649D100BC1672 /* libsqlite3.dylib */,
+				6B2D2B7C1C7D7B21002FFA79 /* libsqlite3.tbd */,
 				6BA73FD41AB6431200BC1672 /* DataStore-SQLite-part1-Swift */,
 				6BA73FEA1AB6431200BC1672 /* DataStore-SQLite-part1-SwiftTests */,
 				6BA73FD31AB6431200BC1672 /* Products */,
@@ -174,6 +174,8 @@
 		6BA73FCA1AB6431200BC1672 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Aberystwyth University";
 				TargetAttributes = {
@@ -432,6 +434,7 @@
 				6BA73FF31AB6431200BC1672 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BA73FF41AB6431200BC1672 /* Build configuration list for PBXNativeTarget "DataStore-SQLite-part1-SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +443,7 @@
 				6BA73FF61AB6431200BC1672 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
