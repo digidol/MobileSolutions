@@ -28,23 +28,33 @@ class PrototypeTableCellTableViewController: UITableViewController {
         return 160
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath
-                            indexPath: NSIndexPath) -> UITableViewCell {
-                                
+    // tableView(myTableView, cellForRowAtIndexPath: myIndexPath)
+    
+    func aMethod(a: Int, b: Int) {
+        
+    }
+    
+    override func tableView(
+        tableView: UITableView,
+        cellForRowAtIndexPath: NSIndexPath)
+        -> UITableViewCell {
+     
+        aMethod(1, b: 2)
+            
         var cell: UITableViewCell
                                 
-        if indexPath.row % 2 == 0 {
+        if cellForRowAtIndexPath.row % 2 == 0 {
             
            cell = tableView.dequeueReusableCellWithIdentifier("Cell",
-                      forIndexPath: indexPath) as UITableViewCell
+                      forIndexPath: cellForRowAtIndexPath) as UITableViewCell
         }
         else {
             cell = tableView.dequeueReusableCellWithIdentifier("SecondCell",
-                forIndexPath: indexPath) as UITableViewCell
+                forIndexPath: cellForRowAtIndexPath) as UITableViewCell
         }
                                 
                                 
-        cell.textLabel!.text = "Cell \(indexPath.section),\(indexPath.row)"
+        cell.textLabel!.text = "Cell \(cellForRowAtIndexPath.section),\(cellForRowAtIndexPath.row)"
     
         return cell
     }

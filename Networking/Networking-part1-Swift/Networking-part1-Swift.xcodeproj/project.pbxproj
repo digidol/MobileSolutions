@@ -13,6 +13,7 @@
 		6B9B83BF1AB8E3C900E8E2FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B83BE1AB8E3C900E8E2FB /* Images.xcassets */; };
 		6B9B83C21AB8E3C900E8E2FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B83C01AB8E3C900E8E2FB /* LaunchScreen.xib */; };
 		6B9B83CE1AB8E3C900E8E2FB /* Networking_part1_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B83CD1AB8E3C900E8E2FB /* Networking_part1_SwiftTests.swift */; };
+		6BD85D5F1C8067A900F47B0F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD85D5E1C8067A900F47B0F /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		6B9B83C71AB8E3C900E8E2FB /* Networking-part1-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Networking-part1-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9B83CC1AB8E3C900E8E2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B9B83CD1AB8E3C900E8E2FB /* Networking_part1_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking_part1_SwiftTests.swift; sourceTree = "<group>"; };
+		6BD85D5E1C8067A900F47B0F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				6B9B83BB1AB8E3C900E8E2FB /* Main.storyboard */,
 				6B9B83BE1AB8E3C900E8E2FB /* Images.xcassets */,
 				6B9B83C01AB8E3C900E8E2FB /* LaunchScreen.xib */,
+				6BD85D5E1C8067A900F47B0F /* SwiftyJSON.swift */,
 				6B9B83B51AB8E3C900E8E2FB /* Supporting Files */,
 			);
 			path = "Networking-part1-Swift";
@@ -156,6 +159,8 @@
 		6B9B83AA1AB8E3C900E8E2FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Aberystwyth University";
 				TargetAttributes = {
@@ -212,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD85D5F1C8067A900F47B0F /* SwiftyJSON.swift in Sources */,
 				6B9B83BA1AB8E3C900E8E2FB /* ViewController.swift in Sources */,
 				6B9B83B81AB8E3C900E8E2FB /* AppDelegate.swift in Sources */,
 			);
@@ -337,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Networking-part1-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -347,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Networking-part1-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

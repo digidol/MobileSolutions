@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         
         let fileURL = documentsURL.URLByAppendingPathComponent("Colours.plist")
         
-        if let dictionaryNames = (NSDictionary(contentsOfURL: fileURL) as? Dictionary<String, String>) {
+        if let dictionaryNames = (NSDictionary(contecntsOfURL: fileURL) as? Dictionary<String, String>) {
             names = dictionaryNames
         }
         

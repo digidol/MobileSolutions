@@ -163,11 +163,9 @@ class ViewController: UIViewController {
             speaker.email = controller.email.text!
             speaker.biography = controller.biography.text
             
-            var error: NSError?
             do {
                 try managedContext.save()
-            } catch let error1 as NSError {
-                error = error1
+            } catch let error as NSError {
                 NSLog("Could not save data \(error)")
             }
             updateEntityCount()
