@@ -1,23 +1,22 @@
 //
-//  MainTableViewController.swift
-//  PassingDataBetweenScenes
+//  ConferenceTableViewController.swift
+//  SQLiteExample
 //
-//  Created by Neil Taylor on 05/03/2016.
+//  Created by Neil Taylor on 23/02/2016.
 //  Copyright © 2016 Aberystwyth University. All rights reserved.
 //
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class ConferenceTableViewController: UITableViewController {
 
+    let dataStore = DataStore()
+    
+    var sessions: [SessionItem]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        sessions = dataStore.sessionItemList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,24 +28,23 @@ class MainTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return sessions.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = sessions[indexPath.row].title
 
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

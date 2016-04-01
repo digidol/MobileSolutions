@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B7C27DB1C8AC51F0065CC58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C27DA1C8AC51F0065CC58 /* AppDelegate.swift */; };
-		6B7C27DD1C8AC51F0065CC58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C27DC1C8AC51F0065CC58 /* ViewController.swift */; };
-		6B7C27E01C8AC51F0065CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C27DE1C8AC51F0065CC58 /* Main.storyboard */; };
-		6B7C27E21C8AC51F0065CC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C27E11C8AC51F0065CC58 /* Assets.xcassets */; };
-		6B7C27E51C8AC51F0065CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C27E31C8AC51F0065CC58 /* LaunchScreen.storyboard */; };
+		6BF692911C72FD5200210090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF692901C72FD5200210090 /* AppDelegate.swift */; };
+		6BF692931C72FD5200210090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF692921C72FD5200210090 /* ViewController.swift */; };
+		6BF692961C72FD5200210090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF692941C72FD5200210090 /* Main.storyboard */; };
+		6BF692981C72FD5200210090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF692971C72FD5200210090 /* Assets.xcassets */; };
+		6BF6929B1C72FD5200210090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF692991C72FD5200210090 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6B7C27D71C8AC51F0065CC58 /* PassingDataBetweenScenes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassingDataBetweenScenes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B7C27DA1C8AC51F0065CC58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6B7C27DC1C8AC51F0065CC58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6B7C27DF1C8AC51F0065CC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6B7C27E11C8AC51F0065CC58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6B7C27E41C8AC51F0065CC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6B7C27E61C8AC51F0065CC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BF6928D1C72FD5200210090 /* StaticTablesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StaticTablesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BF692901C72FD5200210090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6BF692921C72FD5200210090 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6BF692951C72FD5200210090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6BF692971C72FD5200210090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6BF6929A1C72FD5200210090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6BF6929C1C72FD5200210090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6B7C27D41C8AC51F0065CC58 /* Frameworks */ = {
+		6BF6928A1C72FD5200210090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,71 +35,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B7C27CE1C8AC51F0065CC58 = {
+		6BF692841C72FD5200210090 = {
 			isa = PBXGroup;
 			children = (
-				6B7C27D91C8AC51F0065CC58 /* PassingDataBetweenScenes */,
-				6B7C27D81C8AC51F0065CC58 /* Products */,
+				6BF6928F1C72FD5200210090 /* StaticTablesExample */,
+				6BF6928E1C72FD5200210090 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6B7C27D81C8AC51F0065CC58 /* Products */ = {
+		6BF6928E1C72FD5200210090 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B7C27D71C8AC51F0065CC58 /* PassingDataBetweenScenes.app */,
+				6BF6928D1C72FD5200210090 /* StaticTablesExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6B7C27D91C8AC51F0065CC58 /* PassingDataBetweenScenes */ = {
+		6BF6928F1C72FD5200210090 /* StaticTablesExample */ = {
 			isa = PBXGroup;
 			children = (
-				6B7C27DA1C8AC51F0065CC58 /* AppDelegate.swift */,
-				6B7C27DC1C8AC51F0065CC58 /* ViewController.swift */,
-				6B7C27DE1C8AC51F0065CC58 /* Main.storyboard */,
-				6B7C27E11C8AC51F0065CC58 /* Assets.xcassets */,
-				6B7C27E31C8AC51F0065CC58 /* LaunchScreen.storyboard */,
-				6B7C27E61C8AC51F0065CC58 /* Info.plist */,
+				6BF692901C72FD5200210090 /* AppDelegate.swift */,
+				6BF692921C72FD5200210090 /* ViewController.swift */,
+				6BF692941C72FD5200210090 /* Main.storyboard */,
+				6BF692971C72FD5200210090 /* Assets.xcassets */,
+				6BF692991C72FD5200210090 /* LaunchScreen.storyboard */,
+				6BF6929C1C72FD5200210090 /* Info.plist */,
 			);
-			path = PassingDataBetweenScenes;
+			path = StaticTablesExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6B7C27D61C8AC51F0065CC58 /* PassingDataBetweenScenes */ = {
+		6BF6928C1C72FD5200210090 /* StaticTablesExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B7C27E91C8AC51F0065CC58 /* Build configuration list for PBXNativeTarget "PassingDataBetweenScenes" */;
+			buildConfigurationList = 6BF6929F1C72FD5200210090 /* Build configuration list for PBXNativeTarget "StaticTablesExample" */;
 			buildPhases = (
-				6B7C27D31C8AC51F0065CC58 /* Sources */,
-				6B7C27D41C8AC51F0065CC58 /* Frameworks */,
-				6B7C27D51C8AC51F0065CC58 /* Resources */,
+				6BF692891C72FD5200210090 /* Sources */,
+				6BF6928A1C72FD5200210090 /* Frameworks */,
+				6BF6928B1C72FD5200210090 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PassingDataBetweenScenes;
-			productName = PassingDataBetweenScenes;
-			productReference = 6B7C27D71C8AC51F0065CC58 /* PassingDataBetweenScenes.app */;
+			name = StaticTablesExample;
+			productName = StaticTablesExample;
+			productReference = 6BF6928D1C72FD5200210090 /* StaticTablesExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6B7C27CF1C8AC51F0065CC58 /* Project object */ = {
+		6BF692851C72FD5200210090 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Aberystwyth University";
 				TargetAttributes = {
-					6B7C27D61C8AC51F0065CC58 = {
+					6BF6928C1C72FD5200210090 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 6B7C27D21C8AC51F0065CC58 /* Build configuration list for PBXProject "PassingDataBetweenScenes" */;
+			buildConfigurationList = 6BF692881C72FD5200210090 /* Build configuration list for PBXProject "StaticTablesExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -107,54 +107,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 6B7C27CE1C8AC51F0065CC58;
-			productRefGroup = 6B7C27D81C8AC51F0065CC58 /* Products */;
+			mainGroup = 6BF692841C72FD5200210090;
+			productRefGroup = 6BF6928E1C72FD5200210090 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B7C27D61C8AC51F0065CC58 /* PassingDataBetweenScenes */,
+				6BF6928C1C72FD5200210090 /* StaticTablesExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6B7C27D51C8AC51F0065CC58 /* Resources */ = {
+		6BF6928B1C72FD5200210090 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7C27E51C8AC51F0065CC58 /* LaunchScreen.storyboard in Resources */,
-				6B7C27E21C8AC51F0065CC58 /* Assets.xcassets in Resources */,
-				6B7C27E01C8AC51F0065CC58 /* Main.storyboard in Resources */,
+				6BF6929B1C72FD5200210090 /* LaunchScreen.storyboard in Resources */,
+				6BF692981C72FD5200210090 /* Assets.xcassets in Resources */,
+				6BF692961C72FD5200210090 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6B7C27D31C8AC51F0065CC58 /* Sources */ = {
+		6BF692891C72FD5200210090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7C27DD1C8AC51F0065CC58 /* ViewController.swift in Sources */,
-				6B7C27DB1C8AC51F0065CC58 /* AppDelegate.swift in Sources */,
+				6BF692931C72FD5200210090 /* ViewController.swift in Sources */,
+				6BF692911C72FD5200210090 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6B7C27DE1C8AC51F0065CC58 /* Main.storyboard */ = {
+		6BF692941C72FD5200210090 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6B7C27DF1C8AC51F0065CC58 /* Base */,
+				6BF692951C72FD5200210090 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6B7C27E31C8AC51F0065CC58 /* LaunchScreen.storyboard */ = {
+		6BF692991C72FD5200210090 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6B7C27E41C8AC51F0065CC58 /* Base */,
+				6BF6929A1C72FD5200210090 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6B7C27E71C8AC51F0065CC58 /* Debug */ = {
+		6BF6929D1C72FD5200210090 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -206,7 +206,7 @@
 			};
 			name = Debug;
 		};
-		6B7C27E81C8AC51F0065CC58 /* Release */ = {
+		6BF6929E1C72FD5200210090 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -243,24 +243,24 @@
 			};
 			name = Release;
 		};
-		6B7C27EA1C8AC51F0065CC58 /* Debug */ = {
+		6BF692A01C72FD5200210090 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PassingDataBetweenScenes/Info.plist;
+				INFOPLIST_FILE = StaticTablesExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.app.PassingDataBetweenScenes;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.app.StaticTablesExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		6B7C27EB1C8AC51F0065CC58 /* Release */ = {
+		6BF692A11C72FD5200210090 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PassingDataBetweenScenes/Info.plist;
+				INFOPLIST_FILE = StaticTablesExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.app.PassingDataBetweenScenes;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.app.StaticTablesExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -268,24 +268,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6B7C27D21C8AC51F0065CC58 /* Build configuration list for PBXProject "PassingDataBetweenScenes" */ = {
+		6BF692881C72FD5200210090 /* Build configuration list for PBXProject "StaticTablesExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6B7C27E71C8AC51F0065CC58 /* Debug */,
-				6B7C27E81C8AC51F0065CC58 /* Release */,
+				6BF6929D1C72FD5200210090 /* Debug */,
+				6BF6929E1C72FD5200210090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B7C27E91C8AC51F0065CC58 /* Build configuration list for PBXNativeTarget "PassingDataBetweenScenes" */ = {
+		6BF6929F1C72FD5200210090 /* Build configuration list for PBXNativeTarget "StaticTablesExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6B7C27EA1C8AC51F0065CC58 /* Debug */,
-				6B7C27EB1C8AC51F0065CC58 /* Release */,
+				6BF692A01C72FD5200210090 /* Debug */,
+				6BF692A11C72FD5200210090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6B7C27CF1C8AC51F0065CC58 /* Project object */;
+	rootObject = 6BF692851C72FD5200210090 /* Project object */;
 }

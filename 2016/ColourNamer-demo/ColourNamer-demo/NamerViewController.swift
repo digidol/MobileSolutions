@@ -1,14 +1,14 @@
 //
-//  ClassReferenceViewController.swift
-//  PassingDataBetweenScenes
+//  NamerViewController.swift
+//  ColourNamer-demo
 //
-//  Created by Neil Taylor on 05/03/2016.
+//  Created by Neil Taylor on 16/02/2016.
 //  Copyright © 2016 Aberystwyth University. All rights reserved.
 //
 
 import UIKit
 
-class ClassReferenceViewController: UIViewController {
+class NamerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
