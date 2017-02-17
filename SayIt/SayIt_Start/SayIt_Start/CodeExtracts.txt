@@ -1,0 +1,38 @@
+// Extract 1
+// Add this to the class definition
+UITextFieldDelegate
+
+// Extract 2
+// Add this into the ViewController class
+/*
+ One of the UITextFieldDelegate functions. We use this
+ method to remove the keyboard from the screen when the
+ return key has been pressed.
+*/
+func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+     return true
+}
+
+// Extract 3
+// Add this into the speakText func, in ViewController
+if let text = textToSpeak.text {
+
+    let utterance = AVSpeechUtterance(string: text)
+    utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+
+    let synthesizer = AVSpeechSynthesizer()
+
+    synthesizer.speakUtterance(utterance)
+}
+
+// Extract 4
+// Add this into ViewController class
+let delegate = SpeechDelegate()
+
+// Extract 5
+synthesizer.delegate = speechDelegate
+
+// Extract 6
+self.speechDelegate.speechController = self
+

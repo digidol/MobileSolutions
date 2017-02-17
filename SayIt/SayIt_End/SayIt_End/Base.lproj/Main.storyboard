@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speech View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpeechViewController" customModule="SayIt_End" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxV-Ps-gKO">
+                                <rect key="frame" x="20" y="75" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cKp-Qt-ZUx"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a phrase to be spoken." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW6-mO-bqA">
+                                <rect key="frame" x="20" y="51" width="219" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqD-TW-VKG">
+                                <rect key="frame" x="278" y="119" width="43" height="30"/>
+                                <state key="normal" title="Speak"/>
+                                <connections>
+                                    <action selector="speakText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g5o-di-dze"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-6r-207">
+                                <rect key="frame" x="20" y="167" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BZr-6r-207" firstAttribute="top" secondItem="YqD-TW-VKG" secondAttribute="bottom" constant="18" id="3C1-Cf-BcN"/>
+                            <constraint firstItem="YqD-TW-VKG" firstAttribute="top" secondItem="nxV-Ps-gKO" secondAttribute="bottom" constant="14" id="7Tq-6I-6t1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nxV-Ps-gKO" secondAttribute="trailing" id="P9f-Ha-0S7"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BZr-6r-207" secondAttribute="leading" id="W29-6o-cOA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="gW6-mO-bqA" secondAttribute="leading" id="gCT-HJ-Rfd"/>
+                            <constraint firstItem="nxV-Ps-gKO" firstAttribute="top" secondItem="gW6-mO-bqA" secondAttribute="bottom" constant="3" id="gqd-CZ-I5l"/>
+                            <constraint firstItem="YqD-TW-VKG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="naz-ka-2GP"/>
+                            <constraint firstItem="nxV-Ps-gKO" firstAttribute="leading" secondItem="gW6-mO-bqA" secondAttribute="leading" id="onW-jB-je2"/>
+                            <constraint firstItem="gW6-mO-bqA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="31" id="q0j-yU-YGu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BZr-6r-207" secondAttribute="trailing" id="sgQ-m9-e46"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="BZr-6r-207" id="cHg-Ye-XAf"/>
+                        <outlet property="textToSpeak" destination="nxV-Ps-gKO" id="cWs-sb-JIo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="-9"/>
+        </scene>
+    </scenes>
+</document>

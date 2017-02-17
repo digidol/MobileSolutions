@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  ColourNamer-part2-Swift
+//  SayIt
 //
-//  Created by Neil Taylor on 04/03/2015.
-//  Copyright (c) 2015 Aberystwyth University. All rights reserved.
+//  Created by Neil Taylor on 16/06/2016.
+//  Copyright © 2016 Aberystwyth University. All rights reserved.
 //
 
 import UIKit

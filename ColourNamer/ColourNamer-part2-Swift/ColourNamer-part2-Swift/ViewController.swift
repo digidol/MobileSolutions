@@ -28,39 +28,39 @@ class ViewController: UIViewController {
     
     func saveData() {
         
-        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
         print("Documents path: \(documentsURL)")
         
-        let fileURL = documentsURL.URLByAppendingPathComponent("Colours.plist")
+        let fileURL = documentsURL.appendingPathComponent("Colours.plist")
         
         let namesDictionary = names as NSDictionary
-        namesDictionary.writeToURL(fileURL, atomically: true)
+        namesDictionary.write(to: fileURL, atomically: true)
         
-        /*let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(names, forKey: "ColourNames")*/
+        let defaults = UserDefaults.standard
+        defaults.set(names, forKey: "ColourNames")
     }
     
     func loadData() {
         
-        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         print("Documents path: \(documentsURL)")
         
-        let fileURL = documentsURL.URLByAppendingPathComponent("Colours.plist")
+        let fileURL = documentsURL.appendingPathComponent("Colours.plist")
         
-        if let dictionaryNames = (NSDictionary(contecntsOfURL: fileURL) as? Dictionary<String, String>) {
+        if let dictionaryNames = (NSDictionary(contentsOf: fileURL) as? Dictionary<String, String>) {
             names = dictionaryNames
         }
         
-        /*let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let dictionary = defaults.dictionaryForKey("ColourNames") {
+        if let dictionary = defaults.dictionary(forKey: "ColourNames") {
             names = dictionary as! Dictionary<String,String>
 
-        }*/
+        }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
     }
@@ -90,34 +90,34 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func valueChanged(sender: AnyObject) {
+    @IBAction func valueChanged(_ sender: AnyObject) {
         updateBackgroundColor()
     }
     
-    @IBAction func reset(sender: AnyObject) {
+    @IBAction func reset(_ sender: AnyObject) {
         redSlider.value = 0.5
         greenSlider.value = 0.5
         blueSlider.value = 0.5
         updateBackgroundColor()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue,
-        sender: AnyObject?) {
-            let namerScreen = segue.destinationViewController as? NamerViewController
+    override func prepare(for segue: UIStoryboardSegue,
+        sender: Any?) {
+            let namerScreen = segue.destination as? NamerViewController
             namerScreen?.view.backgroundColor = self.view.backgroundColor
     }
     
-    func setCurrentName(name: String) {
+    func setCurrentName(_ name: String) {
         currentColourLabel.text = "Current: \(name) [\(getColourKey())]"
         names[getColourKey()] = name
         saveData()
     }
     
-    @IBAction func setColourName(segue: UIStoryboardSegue) {
-        let source = segue.sourceViewController as? NamerViewController
+    @IBAction func setColourName(_ segue: UIStoryboardSegue) {
+        let source = segue.source as? NamerViewController
         
         if var name = source?.textField?.text {
-            name = name.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            name = name.trimmingCharacters(in: CharacterSet.whitespaces)
             if name.characters.count == 0 {
                 setCurrentName("Unknown")
             }
@@ -130,7 +130,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func cancelSetColourName(segue: UIStoryboardSegue) {
+    @IBAction func cancelSetColourName(_ segue: UIStoryboardSegue) {
         // No action
     }
     
