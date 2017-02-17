@@ -39,29 +39,29 @@ class ViewController: UIViewController {
         currentColourLabel.text = "Current: Unknown"
     }
     
-    @IBAction func valueChanged(sender: AnyObject) {
+    @IBAction func valueChanged(_ sender: AnyObject) {
         updateBackgroundColor()
     }
     
-    @IBAction func reset(sender: AnyObject) {
+    @IBAction func reset(_ sender: AnyObject) {
         redSlider.value = 0.5
         greenSlider.value = 0.5
         blueSlider.value = 0.5
         updateBackgroundColor()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue,
-                                  sender: AnyObject?) {
-        let namerScreen = segue.destinationViewController as? NamerViewController
+    override func prepare(for segue: UIStoryboardSegue,
+                                  sender: Any?) {
+        let namerScreen = segue.destination as? NamerViewController
         namerScreen?.view.backgroundColor = self.view.backgroundColor
     }
 
-    func setCurrentName(name: String) {
+    func setCurrentName(_ name: String) {
         currentColourLabel.text = "Current: \(name)"
     }
     
-    @IBAction func setColourName(segue: UIStoryboardSegue) {
-        let source = segue.sourceViewController as? NamerViewController
+    @IBAction func setColourName(_ segue: UIStoryboardSegue) {
+        let source = segue.source as? NamerViewController
         
         if let name = source?.textField?.text {
             setCurrentName(name)
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func cancelSetColourName(segue: UIStoryboardSegue) {
+    @IBAction func cancelSetColourName(_ segue: UIStoryboardSegue) {
         // No action
     }
 
