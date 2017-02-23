@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     func saveData() {
         
+        // the following lines represent the first approach - managing a plist ourselves
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
         print("Documents path: \(documentsURL)")
@@ -37,12 +38,15 @@ class ViewController: UIViewController {
         let namesDictionary = names as NSDictionary
         namesDictionary.write(to: fileURL, atomically: true)
         
+        // the following lines represent an alternative approach, which is to use the built-in
+        // UserDefaults to manage modest amounts of data
         let defaults = UserDefaults.standard
         defaults.set(names, forKey: "ColourNames")
     }
     
     func loadData() {
         
+        // the following lines represent the first approach - managing a plist ourselves
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         print("Documents path: \(documentsURL)")
         
@@ -52,6 +56,8 @@ class ViewController: UIViewController {
             names = dictionaryNames
         }
         
+        // the following lines represent an alternative approach, which is to use the built-in
+        // UserDefaults to manage modest amounts of data
         let defaults = UserDefaults.standard
         
         if let dictionary = defaults.dictionary(forKey: "ColourNames") {
