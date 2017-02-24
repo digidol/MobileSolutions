@@ -23,20 +23,20 @@ class PrototypeTableCellTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func tableView(tableView: UITableView,
+    override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return 160
+        return 1600
     }
     
     // tableView(myTableView, cellForRowAtIndexPath: myIndexPath)
     
-    func aMethod(a: Int, b: Int) {
+    func aMethod(_ a: Int, b: Int) {
         
     }
     
     override func tableView(
-        tableView: UITableView,
-        cellForRowAtIndexPath: NSIndexPath)
+        _ tableView: UITableView,
+        cellForRowAt cellForRowAtIndexPath: IndexPath)
         -> UITableViewCell {
      
         aMethod(1, b: 2)
@@ -45,12 +45,12 @@ class PrototypeTableCellTableViewController: UITableViewController {
                                 
         if cellForRowAtIndexPath.row % 2 == 0 {
             
-           cell = tableView.dequeueReusableCellWithIdentifier("Cell",
-                      forIndexPath: cellForRowAtIndexPath) as UITableViewCell
+           cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
+                      for: cellForRowAtIndexPath) as UITableViewCell
         }
         else {
-            cell = tableView.dequeueReusableCellWithIdentifier("SecondCell",
-                forIndexPath: cellForRowAtIndexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "SecondCell",
+                for: cellForRowAtIndexPath) as UITableViewCell
         }
                                 
                                 
@@ -59,9 +59,9 @@ class PrototypeTableCellTableViewController: UITableViewController {
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let controller = segue.destinationViewController as? ViewController {
+        if let controller = segue.destination as? ViewController {
         
            controller.detailItem = "something"
         }

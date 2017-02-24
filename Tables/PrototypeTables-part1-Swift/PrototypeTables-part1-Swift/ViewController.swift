@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         // using a Swift 2 feature, that allows us to provide multiple let 
         // assignments in a single if statement. In Swift 1.1, we needed 
         // to do this as two if statements, as shown in the worksheet.
-        if let detail = self.detailItem, label = self.detailDescriptionLabel {
+        if let detail = self.detailItem, let label = self.detailDescriptionLabel {
             label.text = detail
         }
     }

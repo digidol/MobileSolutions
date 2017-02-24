@@ -11,16 +11,16 @@ import UIKit
 class ViewController: UITableViewController {
     
     // data to be displayed in the table
-    var data = [NSDate]()
+    var data = [Date]()
     
     // alternative array, with a tuple for each value
-    var dataWithTuples: [(image: String, date: NSDate)] = []
+    var dataWithTuples: [(image: String, date: Date)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // setup an Edit/Done button in the navigation bar
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,13 +29,13 @@ class ViewController: UITableViewController {
     
     //MARK: - Table Data Source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataWithTuples.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             as UITableViewCell
         
         cell.textLabel?.text = "Example Text"
@@ -44,37 +44,37 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView,
-        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
-        toIndexPath destinationIndexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView,
+        moveRowAt sourceIndexPath: IndexPath,
+        to destinationIndexPath: IndexPath) {
         
-        let dataValue = dataWithTuples.removeAtIndex(sourceIndexPath.row)
-        dataWithTuples.insert(dataValue, atIndex: destinationIndexPath.row)
+        let dataValue = dataWithTuples.remove(at: sourceIndexPath.row)
+        dataWithTuples.insert(dataValue, at: destinationIndexPath.row)
     }
     
-    override func tableView(tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView,
+        commit editingStyle: UITableViewCellEditingStyle,
+        forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .Delete {
-           dataWithTuples.removeAtIndex(indexPath.row)
-           self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        if editingStyle == .delete {
+           dataWithTuples.remove(at: indexPath.row)
+           self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     
     //MARK: - IBActions
     
-    @IBAction func addItem(sender: UIBarButtonItem) {
+    @IBAction func addItem(_ sender: UIBarButtonItem) {
         
-        dataWithTuples.insert(("test", NSDate()), atIndex: 0)
+        dataWithTuples.insert(("test", Date()), at: 0)
 //        data.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
     //MARK: - Table Delegate 
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Example title"
     }
     
