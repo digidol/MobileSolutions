@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
-    
     var detailItem: String? {
         didSet {
             // Update the view.
@@ -22,11 +21,8 @@ class ViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        
-        // Note, this is different from the worksheet example code. We are 
-        // using a Swift 2 feature, that allows us to provide multiple let 
-        // assignments in a single if statement. In Swift 1.1, we needed 
-        // to do this as two if statements, as shown in the worksheet.
+        // only do this if self.detailItem and self.detailDescriptionLabel
+        // have values
         if let detail = self.detailItem, let label = self.detailDescriptionLabel {
             label.text = detail
         }

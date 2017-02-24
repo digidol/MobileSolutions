@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BB07A8A1E60488700E9ADB3 /* Glyphish - license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6BB07A891E60488700E9ADB3 /* Glyphish - license.txt */; };
 		6BFEA5DC1AA8818000786DB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFEA5DB1AA8818000786DB1 /* AppDelegate.swift */; };
 		6BFEA5DE1AA8818000786DB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFEA5DD1AA8818000786DB1 /* ViewController.swift */; };
 		6BFEA5E11AA8818000786DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFEA5DF1AA8818000786DB1 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BB07A891E60488700E9ADB3 /* Glyphish - license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Glyphish - license.txt"; sourceTree = "<group>"; };
 		6BFEA5D61AA8818000786DB1 /* PrototypeTables-part1-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PrototypeTables-part1-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFEA5DA1AA8818000786DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BFEA5DB1AA8818000786DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		6BFEA5D81AA8818000786DB1 /* PrototypeTables-part1-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				6BB07A891E60488700E9ADB3 /* Glyphish - license.txt */,
 				6BFEA5DB1AA8818000786DB1 /* AppDelegate.swift */,
 				6BFEA5DD1AA8818000786DB1 /* ViewController.swift */,
 				6BFEA5DF1AA8818000786DB1 /* Main.storyboard */,
@@ -198,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB07A8A1E60488700E9ADB3 /* Glyphish - license.txt in Resources */,
 				6BFEA5E11AA8818000786DB1 /* Main.storyboard in Resources */,
 				6BFEA5E61AA8818000786DB1 /* LaunchScreen.xib in Resources */,
 				6BFEA5E31AA8818000786DB1 /* Images.xcassets in Resources */,

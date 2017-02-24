@@ -53,7 +53,7 @@ class PrototypeTableCellTableViewController: UITableViewController {
                 for: cellForRowAtIndexPath) as UITableViewCell
         }
                                 
-                                
+        cell.imageView?.image = #imageLiteral(resourceName: "sample-321-like")
         cell.textLabel!.text = "Cell \(cellForRowAtIndexPath.section),\(cellForRowAtIndexPath.row)"
     
         return cell
