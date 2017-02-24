@@ -169,9 +169,11 @@
 				TargetAttributes = {
 					6BE702E91AA8658000DB9417 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0820;
 					};
 					6BE702FE1AA8658000DB9417 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 6BE702E91AA8658000DB9417;
 					};
 				};
@@ -349,6 +351,7 @@
 				INFOPLIST_FILE = "StaticTables-part1-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -359,6 +362,7 @@
 				INFOPLIST_FILE = "StaticTables-part1-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -377,6 +381,7 @@
 				INFOPLIST_FILE = "StaticTables-part1-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StaticTables-part1-Swift.app/StaticTables-part1-Swift";
 			};
 			name = Debug;
@@ -392,6 +397,7 @@
 				INFOPLIST_FILE = "StaticTables-part1-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StaticTables-part1-Swift.app/StaticTables-part1-Swift";
 			};
 			name = Release;
