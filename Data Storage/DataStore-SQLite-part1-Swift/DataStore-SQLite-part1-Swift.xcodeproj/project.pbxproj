@@ -181,9 +181,11 @@
 				TargetAttributes = {
 					6BA73FD11AB6431200BC1672 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0820;
 					};
 					6BA73FE61AB6431200BC1672 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0820;
 						TestTargetID = 6BA73FD11AB6431200BC1672;
 					};
 				};
@@ -366,6 +368,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DataStore-SQLite-part1-Swift/DataStore-SQLite-part1-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -378,6 +381,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DataStore-SQLite-part1-Swift/DataStore-SQLite-part1-Swift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -396,6 +400,7 @@
 				INFOPLIST_FILE = "DataStore-SQLite-part1-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataStore-SQLite-part1-Swift.app/DataStore-SQLite-part1-Swift";
 			};
 			name = Debug;
@@ -411,6 +416,7 @@
 				INFOPLIST_FILE = "DataStore-SQLite-part1-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataStore-SQLite-part1-Swift.app/DataStore-SQLite-part1-Swift";
 			};
 			name = Release;

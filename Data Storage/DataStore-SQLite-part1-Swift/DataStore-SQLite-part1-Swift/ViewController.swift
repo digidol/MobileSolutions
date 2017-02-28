@@ -18,7 +18,7 @@ class ViewController: UITableViewController {
      * Navigation bar. For this example, it changes the title of
      * the first talk in the list and then reloads the table data. 
      */
-    @IBAction func changeItem(sender: AnyObject) {
+    @IBAction func changeItem(_ sender: AnyObject) {
         dataStore.modifyTitle("TDD for iOS", forId: "tdd")
         tableView.reloadData()
     }
@@ -38,7 +38,7 @@ class ViewController: UITableViewController {
      * Returns the number of items to be displayed on the table, based 
      * on the information in the database.
      */
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataStore.sessionItemList()!.count
     }
     
@@ -46,9 +46,9 @@ class ViewController: UITableViewController {
      * Add information to the table cell for the specified row in the table.
      * The information is accessed via the data store.
      */
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
         let sessionItem = dataStore.sessionItemList()![indexPath.row]
         
@@ -69,7 +69,7 @@ class ViewController: UITableViewController {
      * selected row by adding a prefix of Mod:. This change will be stored in 
      * the database.
      */
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let sessionItem = dataStore.sessionItemList()![indexPath.row]
         
