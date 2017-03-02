@@ -39,7 +39,7 @@ class ViewController: UIViewController {
      */
     func createData() {
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
         
         let result = getSpeakerEntities()
@@ -47,8 +47,8 @@ class ViewController: UIViewController {
         if let speakers = result {
             if speakers.count == 0 {
 
-                let speakerEntity = NSEntityDescription.entityForName("Speaker", inManagedObjectContext: managedContext)
-                let aSpeaker = Speaker(entity: speakerEntity!, insertIntoManagedObjectContext: managedContext)
+                let speakerEntity = NSEntityDescription.entity(forEntityName: "Speaker", in: managedContext)
+                let aSpeaker = Speaker(entity: speakerEntity!, insertInto: managedContext)
                 
                 aSpeaker.email = "nst@aber.ac.uk"
                 aSpeaker.forename = "Neil"
@@ -82,8 +82,8 @@ class ViewController: UIViewController {
      * of using a Predicate to restrict which entities are included 
      * in the fetch request.
      */
-    private func getSpeakerEntities() -> [Speaker]? {
-        let speakerFetch = NSFetchRequest(entityName: "Speaker")
+    fileprivate func getSpeakerEntities() -> [Speaker]? {
+        let speakerFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Speaker")
         
         // Uncomment the following lines to add a sort descriptor. This one 
         // sorts the entities by surname, ascending (A-Z).
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         //]
         
         do {
-            let result = try managedContext.executeFetchRequest(speakerFetch) as? [Speaker]
+            let result = try managedContext.fetch(speakerFetch) as? [Speaker]
             return result
         }
         catch let error as NSError {
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
      * if there aren't any speaker entities or there was a 
      * problem accessing the speaker entities.
      */
-    private func getNumberOfSpeakerEntities() -> Int {
+    fileprivate func getNumberOfSpeakerEntities() -> Int {
         
         if let speakers = getSpeakerEntities() {
             return speakers.count
@@ -124,26 +124,23 @@ class ViewController: UIViewController {
      * 
      * You can also specify a predicate to restrict the fetch request.
      */
-    private func getNumberOfSpeakerEntitiesAlternative() -> Int {
+    fileprivate func getNumberOfSpeakerEntitiesAlternative() -> Int {
         
-        let speakerFetch = NSFetchRequest(entityName: "Speaker")
+        let speakerFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Speaker")
         
         // Uncomment these lines to restrict the lookup to those 
         // Speakers who have emails that begin with 'bi' or begin with 's'.
         //let predicate = NSPredicate(format: "email beginswith 'bi' OR email beginswith 's'")
         //speakerFetch.predicate = predicate
         
-        var error: NSError?
         
-        let count = managedContext.countForFetchRequest(speakerFetch, error: &error)
-        
-        if error == nil {
-            // there wasn't an error
-            return count
+        do {
+            let speakers = try managedContext.fetch(speakerFetch)
+            return speakers.count
         }
-        else {
+        catch let error as NSError {
             print("Error accessing the count: \(error)")
-            return 0;
+            return 0
         }
     }
     
@@ -151,12 +148,12 @@ class ViewController: UIViewController {
      * Called when the segue unwinds from the modal view to enter 
      * details for a new speaker.
      */
-    @IBAction func addSpeakerDetails(segue: UIStoryboardSegue) {
+    @IBAction func addSpeakerDetails(_ segue: UIStoryboardSegue) {
         print("Adding speaker")
-        if let controller = segue.sourceViewController as? SpeakerInfoViewController {
+        if let controller = segue.source as? SpeakerInfoViewController {
             
-            let speakerEntity = NSEntityDescription.entityForName("Speaker", inManagedObjectContext: managedContext)
-            let speaker = Speaker(entity: speakerEntity!, insertIntoManagedObjectContext: managedContext)
+            let speakerEntity = NSEntityDescription.entity(forEntityName: "Speaker", in: managedContext)
+            let speaker = Speaker(entity: speakerEntity!, insertInto: managedContext)
             
             speaker.forename = controller.forename.text!
             speaker.surname = controller.surname.text!
@@ -176,7 +173,7 @@ class ViewController: UIViewController {
      * Utility method to update the label that shows the 
      * number of speakers.
      */
-    private func updateEntityCount() {
+    fileprivate func updateEntityCount() {
         numberOfSpeakers.text = "Number of Speakers: \(getNumberOfSpeakerEntitiesAlternative())"
     }
     
@@ -184,7 +181,7 @@ class ViewController: UIViewController {
      * Called when the segue unwinds from cancel operation on 
      * the modal view to enter details for a new speaker.
      */
-    @IBAction func cancelAddSpeakerDetails(segue: UIStoryboardSegue) {
+    @IBAction func cancelAddSpeakerDetails(_ segue: UIStoryboardSegue) {
         print("The operation was cancelled")
     }
     
@@ -195,14 +192,14 @@ class ViewController: UIViewController {
      * the query does not sort the results, which Speaker is 'first' from this 
      * search might change between different calls to this method.
      */
-    private func getSpeakerWithEmail(email: String) -> Speaker? {
+    fileprivate func getSpeakerWithEmail(_ email: String) -> Speaker? {
         
-        let speakerFetch = NSFetchRequest(entityName: "Speaker")
+        let speakerFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Speaker")
         let predicate = NSPredicate(format: "email == %@", email)
         speakerFetch.predicate = predicate
         
         do {
-            let speakerList = try managedContext.executeFetchRequest(speakerFetch)
+            let speakerList = try managedContext.fetch(speakerFetch)
             return speakerList[0] as? Speaker
             
         } catch let error as NSError {
@@ -214,13 +211,13 @@ class ViewController: UIViewController {
     /** 
      * This method will add a talk to the speaker who has the specified email address.
      */
-    @IBAction func addTalk(sender: AnyObject) {
+    @IBAction func addTalk(_ sender: AnyObject) {
         print("Adding a talk...")
         if let speaker = getSpeakerWithEmail("nst@aber.ac.uk") {
         
-            let talkEntity = NSEntityDescription.entityForName("Talk", inManagedObjectContext: managedContext)
+            let talkEntity = NSEntityDescription.entity(forEntityName: "Talk", in: managedContext)
             
-            let talk = Talk(entity: talkEntity!, insertIntoManagedObjectContext: managedContext)
+            let talk = Talk(entity: talkEntity!, insertInto: managedContext)
             talk.title = "Talk \(speaker.talks.count + 1)"
             talk.abstract = "Talk abstract for \(speaker.talks.count + 1)"
             
@@ -228,7 +225,7 @@ class ViewController: UIViewController {
             // The solution is to create a copy that can be changed (a mutableCopy). 
             // You then add the object to the set and then copy it back, casting it as a NSSet.
             let talks = speaker.talks.mutableCopy() as! NSMutableSet
-            talks.addObject(talk)
+            talks.add(talk)
             speaker.talks = talks as NSSet
             
             do {

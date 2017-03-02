@@ -31,7 +31,7 @@ class SpeakerInfoViewController: UIViewController, UITextFieldDelegate {
      * Clears the keyboard away. This class is set as the delegate for 
      * each of the UITextField objects in the Storyboard.
      */
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }

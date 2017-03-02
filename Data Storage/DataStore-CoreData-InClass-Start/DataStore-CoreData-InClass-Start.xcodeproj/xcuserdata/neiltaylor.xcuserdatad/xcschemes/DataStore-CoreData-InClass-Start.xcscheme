@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B9B83751AB85DD600E8E2FB"
-               BuildableName = "DataStore-CoreData-part1-Swift.app"
-               BlueprintName = "DataStore-CoreData-part1-Swift"
-               ReferencedContainer = "container:DataStore-CoreData-part1-Swift.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B9B838D1AB85DD600E8E2FB"
-               BuildableName = "DataStore-CoreData-part1-SwiftTests.xctest"
-               BlueprintName = "DataStore-CoreData-part1-SwiftTests"
-               ReferencedContainer = "container:DataStore-CoreData-part1-Swift.xcodeproj">
+               BlueprintIdentifier = "6B8170EB1E67EB990003820A"
+               BuildableName = "DataStore-CoreData-InClass-Start.app"
+               BlueprintName = "DataStore-CoreData-InClass-Start"
+               ReferencedContainer = "container:DataStore-CoreData-InClass-Start.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B9B838D1AB85DD600E8E2FB"
-               BuildableName = "DataStore-CoreData-part1-SwiftTests.xctest"
-               BlueprintName = "DataStore-CoreData-part1-SwiftTests"
-               ReferencedContainer = "container:DataStore-CoreData-part1-Swift.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B9B83751AB85DD600E8E2FB"
-            BuildableName = "DataStore-CoreData-part1-Swift.app"
-            BlueprintName = "DataStore-CoreData-part1-Swift"
-            ReferencedContainer = "container:DataStore-CoreData-part1-Swift.xcodeproj">
+            BlueprintIdentifier = "6B8170EB1E67EB990003820A"
+            BuildableName = "DataStore-CoreData-InClass-Start.app"
+            BlueprintName = "DataStore-CoreData-InClass-Start"
+            ReferencedContainer = "container:DataStore-CoreData-InClass-Start.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B9B83751AB85DD600E8E2FB"
-            BuildableName = "DataStore-CoreData-part1-Swift.app"
-            BlueprintName = "DataStore-CoreData-part1-Swift"
-            ReferencedContainer = "container:DataStore-CoreData-part1-Swift.xcodeproj">
+            BlueprintIdentifier = "6B8170EB1E67EB990003820A"
+            BuildableName = "DataStore-CoreData-InClass-Start.app"
+            BlueprintName = "DataStore-CoreData-InClass-Start"
+            ReferencedContainer = "container:DataStore-CoreData-InClass-Start.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B9B83751AB85DD600E8E2FB"
-            BuildableName = "DataStore-CoreData-part1-Swift.app"
-            BlueprintName = "DataStore-CoreData-part1-Swift"
-            ReferencedContainer = "container:DataStore-CoreData-part1-Swift.xcodeproj">
+            BlueprintIdentifier = "6B8170EB1E67EB990003820A"
+            BuildableName = "DataStore-CoreData-InClass-Start.app"
+            BlueprintName = "DataStore-CoreData-InClass-Start"
+            ReferencedContainer = "container:DataStore-CoreData-InClass-Start.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

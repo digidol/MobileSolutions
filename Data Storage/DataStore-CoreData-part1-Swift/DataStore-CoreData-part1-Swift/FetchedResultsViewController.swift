@@ -15,7 +15,7 @@ class FetchedResultsViewController: UITableViewController {
      * The CoreData class that does a lot of work to make it
      * easy to use CoreData with tables. 
      */
-    var fetchedResultsController: NSFetchedResultsController!
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     
     /** A reference to the Managed Object Context in the App Delegate. */
     var managedContext: NSManagedObjectContext?
@@ -39,10 +39,10 @@ class FetchedResultsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "Speaker")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Speaker")
         fetchRequest.sortDescriptors = [
            NSSortDescriptor(key: "surname", ascending: true)
         ]
@@ -53,7 +53,8 @@ class FetchedResultsViewController: UITableViewController {
         
         // option 2: with a section name key path
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-            managedObjectContext: managedContext!, sectionNameKeyPath: "surname", cacheName: nil)
+                                           managedObjectContext: managedContext!,
+                                           sectionNameKeyPath: "surname", cacheName: nil)
         
         do {
             try fetchedResultsController.performFetch()
@@ -71,19 +72,19 @@ class FetchedResultsViewController: UITableViewController {
      * Returns the title, which is simply the first character of the surname 
      * for the section.
      */
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        let indexPath = NSIndexPath(forRow: 0, inSection: section)
-        let speaker = fetchedResultsController.objectAtIndexPath(indexPath) as! Speaker
-        let index = speaker.surname.startIndex.advancedBy(1)
-        return speaker.surname.substringToIndex(index)
+        let indexPath = IndexPath(row: 0, section: section)
+        let speaker = fetchedResultsController.object(at: indexPath) as! Speaker
+        let index = speaker.surname.characters.index(speaker.surname.startIndex, offsetBy: 1)
+        return speaker.surname.substring(to: index)
     }
     
     /** 
      * Get the number of sections, which we would expect to be 1 given
      * the data in this example.
      */
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections!.count
     }
     
@@ -91,7 +92,7 @@ class FetchedResultsViewController: UITableViewController {
      * Access the Fetched Results Controller to get the number of rows in the 
      * given section.
      */
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
         return section.numberOfObjects
     }
@@ -101,10 +102,10 @@ class FetchedResultsViewController: UITableViewController {
      * FetchedResultsController will manage this access and return the required 
      * object.
      */
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
-        let speaker = fetchedResultsController.objectAtIndexPath(indexPath) as! Speaker
+        let speaker = fetchedResultsController.object(at: indexPath) as! Speaker
         
         cell.textLabel?.text = "\(speaker.forename) \(speaker.surname)"
         cell.detailTextLabel?.text = "Number of talks: \(speaker.talks.count)"
