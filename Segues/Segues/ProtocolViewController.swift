@@ -12,10 +12,10 @@ class ProtocolViewController: UIViewController {
 
     var protocolHandler : PassDataProtocol? = nil
     
-    @IBAction func startPassData(sender: AnyObject?) {
+    @IBAction func startPassData(_ sender: AnyObject?) {
     
         self.protocolHandler?.passSomeData("This is some data") 
-        self.navigationController?.popViewControllerAnimated(true);
+        self.navigationController?.popViewController(animated: true);
     }
 
 }

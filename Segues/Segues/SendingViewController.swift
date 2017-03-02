@@ -16,11 +16,11 @@ class SendingViewController : UIViewController {
        super.viewDidLoad()
     }
 
-    @IBAction func sendValueOne(sender: AnyObject?) {
+    @IBAction func sendValueOne(_ sender: AnyObject?) {
         parentController!.returnedValue = "Value1";
     }
     
-    @IBAction func sendValueTwo(sender: AnyObject?) {
+    @IBAction func sendValueTwo(_ sender: AnyObject?) {
         parentController!.returnedValue = "Value2"
     }
     

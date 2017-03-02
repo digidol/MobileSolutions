@@ -12,10 +12,10 @@ class UnwindViewController : UITableViewController {
 
     var selectedValue: String = "Unset";
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedValue = "Row: \(indexPath.row)"
-        performSegueWithIdentifier("unwindExample", sender: self)
+        performSegue(withIdentifier: "unwindExample", sender: self)
     }
     
 }

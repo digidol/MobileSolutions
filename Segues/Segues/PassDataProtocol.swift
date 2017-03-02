@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PassDataProtocol {
-    func passSomeData(data: String)
+    func passSomeData(_ data: String)
 }
