@@ -1,0 +1,11 @@
+<?php
+
+$movie = $_POST['moviename'];
+
+sleep(2);
+
+?>
+{
+"film": <?php echo $movie; ?>,
+"synopsis": <?php echo "Synopsis for $movie"; ?>
+}

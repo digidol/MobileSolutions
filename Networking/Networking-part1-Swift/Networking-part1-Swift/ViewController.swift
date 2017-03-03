@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dataLabel: UILabel!
     
-    var session: NSURLSession?
+    var session: URLSession?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,23 +25,28 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func loadData(sender: AnyObject) {
+    @IBAction func loadData(_ sender: AnyObject) {
         
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        self.dataLabel.text = "";
+        
+        let configuration = URLSessionConfiguration.default
         //you can change the configuration items by assigning values.
         //configuration.timeoutIntervalForRequest = 10.0
         
-        configuration
+        session = URLSession(configuration: configuration)
         
         // This example creates a new session object each time, but it is capable of
         // hanlding multiple requests up to the point when it is invalidated. A better
         // approach would be to initialise this once for the view controller, and
         // call it each time.
-        session = NSURLSession(configuration: configuration)
         
-        let url = NSURL(string: urlLabel.text!)
         
-        let task = session!.dataTaskWithURL(url!, completionHandler: {
+        
+        let url = URL(string: urlLabel.text!)
+        
+        let task = session!.dataTask(with: url!, completionHandler: {
+            
+            
             // this part, within the braces, is a closure. Think of it as a
             // nameless function for now. It is a block of code that is run when
             // the attempt to access the session has finished. This particular
@@ -50,11 +55,11 @@ class ViewController: UIViewController {
             // The -> Void indicates that this closure does not return any value.
             //
             // The following line starts the closure, and you add your code in the body.
-            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            (data: Data?, response: URLResponse?, error: Error?) -> Void in
             
             if let downloadedData = data {
             
-                // the body of the closure. These statements can access the parameters 
+                // the body of the closure. These statements can access the parameters
                 // (data, response and error) that are passed in.
                 
                 
@@ -63,13 +68,13 @@ class ViewController: UIViewController {
                 // NSJSONSerialization.JSONObjectWithData and then looking at the 
                 // dictionary items. This example code calls processJSONData, defined
                 // later in this class, which walks through the items in the dictionary.
-                let text = "Completed with response: \(response)\ndata length: \(downloadedData.length)\nerror: \(error)"
+                let text = "Completed with response: \(response)\ndata length: \(downloadedData.count)\nerror: \(error)"
                 print(text)
-                print(NSString(data: downloadedData, encoding: NSUTF8StringEncoding)!)
+                print(NSString(data: downloadedData, encoding: String.Encoding.utf8.rawValue)!)
                 
                 do {
                     if let jsonData =
-                        try NSJSONSerialization.JSONObjectWithData(downloadedData, options: .MutableContainers) as? NSDictionary {
+                        try JSONSerialization.jsonObject(with: downloadedData, options: .mutableContainers) as? NSDictionary {
                         
                         self.processJSONData(jsonData)
                         
@@ -77,13 +82,19 @@ class ViewController: UIViewController {
                         //print(jsonData["channel"][0]["item"]["title"])
                         
                         // What happens if you uncomment the following line?
-                        //print((((jsonData["channel"] as! NSArray)[1]) as! NSDictionary)["item"]!["title"]!)
+                        //print(((((jsonData["channel"] as! NSArray)[1]) as! NSDictionary)["item"]! as! NSDictionary)["title"]!)
                         
-                        dispatch_async(dispatch_get_main_queue()) {
+                        self.dataLabel.text = text
+                        self.session?.finishTasksAndInvalidate()
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        
+                        // Uncomment the following block
+                        /*
+                        DispatchQueue.main.async {
                             self.dataLabel.text = text
                             self.session?.finishTasksAndInvalidate()
-                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        }
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        }*/
                     }
                 }
                 catch let error as NSError {
@@ -95,8 +106,9 @@ class ViewController: UIViewController {
                 // See https://github.com/SwiftyJSON/SwiftyJSON
                 // Simple integration is used here, by copying SwiftyJASON.swift into the 
                 // project.
-                let json = JSON(data: downloadedData)
-                print("Data is: \(json["channel"][0]["item"]["title"])")
+                //let json = JSON(data: downloadedData)
+                //print("Data is: \(json["channel"][0]["item"]["title"])")
+                //print("Data is \(json["wordpairs"][0]["note"])")
             }
             else {
                 print("downloaded data was empty \(error?.localizedDescription)")
@@ -106,14 +118,14 @@ class ViewController: UIViewController {
         // task.resume is used to start the process to load the URL.
         task.resume()
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     /** 
      * This method shows one way that you can iterate over the elements in the Dictionary 
      * and display the elements on the console. This is recursive,
      */
-    func processJSONData(jsonData: AnyObject, indent: String = "") {
+    func processJSONData(_ jsonData: AnyObject, indent: String = "") {
         
         let actualIndent = indent + "    "
         
@@ -129,10 +141,10 @@ class ViewController: UIViewController {
                     print("\(actualIndent)key \"\(key)\" value \(data!)")
                     
                     if data is NSMutableArray {
-                        processJSONData(data!, indent: actualIndent)
+                        processJSONData(data! as AnyObject, indent: actualIndent)
                     } else if data is NSMutableDictionary {
                         print("\(actualIndent)Dictionary:")
-                        processJSONData(data!, indent: actualIndent)
+                        processJSONData(data! as AnyObject, indent: actualIndent)
                         print("\(actualIndent)End of Dictionary")
                     }
                 }
@@ -142,7 +154,7 @@ class ViewController: UIViewController {
         else if jsonData is NSMutableArray {
             print("\(actualIndent)Array: \(jsonData)")
             for item in (jsonData as! NSMutableArray) {
-                processJSONData(item, indent: actualIndent)
+                processJSONData(item as AnyObject, indent: actualIndent)
             }
             print("\(actualIndent)End of Array")
         }
@@ -156,7 +168,7 @@ class ViewController: UIViewController {
      * to a previous view, or show another view, then you could call invalidateAndCancel()
      * in order to terminate any access that is in progress.
      */
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("Trying to cancel any existing tasks")
         session?.invalidateAndCancel()
