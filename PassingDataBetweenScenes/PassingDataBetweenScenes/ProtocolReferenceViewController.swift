@@ -27,12 +27,12 @@ class ProtocolReferenceViewController: UIViewController {
     // to determine if we are moving back to the parent view. If so, 
     // we call the delegate method to return some data. The data is a 
     // fixed array in this code, but could be something that is calculated.
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if self.isMovingFromParentViewController() {
+        if self.isMovingFromParentViewController {
             print("about to return from the protocol reference class - returning data")
-            delegate?.dataChanged(["this", "is", "some data"])
+            delegate?.dataChanged?(["this", "is", "some data"])
         }
     }
     

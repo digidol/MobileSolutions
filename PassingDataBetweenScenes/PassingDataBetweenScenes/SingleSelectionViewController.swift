@@ -17,47 +17,47 @@ class SingleSelectionViewController : SelectionDoneCancelViewController, UITable
         super.viewDidLoad()
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
         cell.textLabel!.text = items[indexPath.row].data
         if items[indexPath.row].selected {
-           cell.accessoryType = .Checkmark
+           cell.accessoryType = .checkmark
         }
         else {
-            cell.accessoryType = .None
+            cell.accessoryType = .none
         }
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         print("Deselecting item: \(indexPath)")
         items[indexPath.row].selected = false
         
         // request that the row is reloaded so that the changed state is shown on the screen
-        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selecting item: \(indexPath)")
         items[indexPath.row].selected = !(items[indexPath.row].selected)
         
-        // the following two lines are used so that we get a deselect event and know 
+        // the following two lines are used so that we get a deselect event and know
         // which row to cancel the selection on. If we just use tableView.reloadData(), 
         // we throw away the deselection event and don't know which one to deselect.
         // http://stackoverflow.com/questions/33605603/why-is-diddeselectrowatindexpath-not-called/33606748
-        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
-        tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
+        tableView.reloadRows(at: [indexPath], with: .none)
+        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
     }
 
 }

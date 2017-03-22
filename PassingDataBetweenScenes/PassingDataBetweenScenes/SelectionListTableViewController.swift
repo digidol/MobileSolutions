@@ -30,26 +30,26 @@ class SelectionListTableViewController: UITableViewController, DataChangedDelega
     // specify the number of sections and rows. However, it does appear that we can get 
     // away without populating the content of the cell. That is handled by the Static 
     // aspects of the table view that has been configured in the storyboard.
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? SelectionDoneCancelViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? SelectionDoneCancelViewController {
             controller.delegate = self
         }
     }
     
     // MARK: - DataChangedDelegate 
     
-    func dataChanged(data: [String]) {
+    func dataChanged(_ data: [String]) {
         print("Received data \(data)")
     }
 

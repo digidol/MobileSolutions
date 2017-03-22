@@ -37,8 +37,8 @@ class SelectionDoneCancelViewController: UIViewController {
     
     // This method is responsible for passing an array of any selected 
     // items back to the specified delgate.
-    func dismissWithData(data: [SelectionItem]) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func dismissWithData(_ data: [SelectionItem]) {
+        dismiss(animated: true, completion: nil)
         
         // Two stage operation to do the following: 
         // 1/ Filter the SelectionItem objects in the items array. The result 
@@ -51,7 +51,7 @@ class SelectionDoneCancelViewController: UIViewController {
         // was selected. In this example, it is an array of String objects.
         let content = items.filter({$0.selected}).map({selected in selected.data!})
         
-        delegate?.dataChanged(content)
+        delegate?.dataChanged?(content)
     }
     
     // This method will be linked to the Cancel button on the view. 

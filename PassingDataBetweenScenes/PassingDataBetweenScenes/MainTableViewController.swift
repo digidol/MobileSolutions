@@ -27,31 +27,42 @@ class MainTableViewController: UITableViewController, DataChangedDelegate {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return (section == 0) ? 3 : 1
     }
     
     // MARK: - Storyboard Segues and Actions 
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /**
+     * Function that sets links from this view controller to one of the 
+     * ClassReferenceViewController or ProtocolReferenceViewController classes. 
+     * 
+     * This function is called as this controller starts to segue to a new view.
+     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let controller = segue.destinationViewController as? ClassReferenceViewController {
+        if let controller = segue.destination as? ClassReferenceViewController {
                controller.callingController = self
         }
-        else if let controller = segue.destinationViewController as? ProtocolReferenceViewController {
+        else if let controller = segue.destination as? ProtocolReferenceViewController {
             controller.delegate = self 
         }
     }
     
-    @IBAction func exitAction(segue: UIStoryboardSegue) {
-       print("Receiving callback.")
-        if let controller = segue.sourceViewController as? ExitActionViewController {
+    /**
+     * Function is called as the ExitActionViewController returns to this view. 
+     * From this function, we call back to the ExitActionViewController in order to 
+     * access the return data. 
+     */
+    @IBAction func exitAction(_ segue: UIStoryboardSegue) {
+        print("Receiving callback.")
+        if let controller = segue.source as? ExitActionViewController {
            print("Received the data: \(controller.returnData)")
         }
        
@@ -60,7 +71,7 @@ class MainTableViewController: UITableViewController, DataChangedDelegate {
     // MARK: - Method to record data change
     
     // This method is called from the ClassReferenceViewController example.
-    func dataChangedForClassReferenceExample(data: [String]) {
+    func dataChangedForClassReferenceExample(_ data: [String]) {
         print("data is returned from class example: \(data)")
     }
     
@@ -68,7 +79,7 @@ class MainTableViewController: UITableViewController, DataChangedDelegate {
     
     // This method implements the method in the protocol DataChangedDelgate. This 
     // is called from the ProtocolReferenceViewController. 
-    func dataChanged(data: [String]) {
+    func dataChanged(_ data: [String]) {
         print("the data has been changed \(data)")
     }
 

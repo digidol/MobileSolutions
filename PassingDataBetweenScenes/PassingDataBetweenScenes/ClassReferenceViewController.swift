@@ -29,10 +29,10 @@ class ClassReferenceViewController: UIViewController {
     // we call a method in the calling controller to return some data. 
     // The data is a fixed array in this code, but could be something 
     // that is calculated.
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if self.isMovingFromParentViewController() {
+        if self.isMovingFromParentViewController {
             if let controller = callingController {
                 print("about to return some data")
                 controller.dataChangedForClassReferenceExample(

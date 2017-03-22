@@ -1,4 +1,6 @@
 <?php
+// example file from the server - which returns a JSON object
+// used for the POST option
 
 $movie = $_POST['moviename'];
 
@@ -6,6 +8,11 @@ sleep(2);
 
 ?>
 {
-"film": <?php echo $movie; ?>,
-"synopsis": <?php echo "Synopsis for $movie"; ?>
+   "films": [{
+      "film": "<?php echo $movie; ?>",
+      "synopsis": "<?php echo "Synopsis for $movie"; ?>",
+      "rating": "*****",
+      "year": "1985",
+      "director": "Stephen Spielberg"
+   }]
 }

@@ -20,10 +20,15 @@ class ExitActionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    /** 
+     * This should be called after the destination view has had a 
+     * chance to respond to the exitAction function to respond 
+     * to the segue. 
+     */
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if self.isMovingFromParentViewController() {
+        if self.isMovingFromParentViewController {
             print("Dismissing controller and returning to previous view")
             returnData = nil
         }
@@ -40,7 +45,7 @@ class ExitActionViewController: UIViewController {
     // a fixed array. We could instead calculate values that should be 
     // made avialable. The destination controller can then access the 
     // returnData property.
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         returnData = ["data", "from", "the exit option"]
     }
     

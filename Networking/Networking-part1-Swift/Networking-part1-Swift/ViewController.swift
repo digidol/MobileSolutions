@@ -14,33 +14,92 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dataLabel: UILabel!
     
+    @IBOutlet weak var image: UIImageView!
+    
     var session: URLSession?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        urlLabel.text = "http://users.aber.ac.uk/nst/ios/jsonExample.php"
+        urlLabel.text = "http://users.aber.ac.uk/nst/m2220/words.json"
+    }
+    
+    func initialiseSession() {
+        
+        if session == nil {
+        
+            // setup the session - the session can be used multiple times
+        
+            let configuration = URLSessionConfiguration.default
+            //you can change the configuration items by assigning values.
+            //configuration.timeoutIntervalForRequest = 10.0
+        
+            session = URLSession(configuration: configuration)
+        
+            // given that we aren't doing anything to configure the session,
+            // we can just do the following:
+            // session = URLSession(configuration: .default)
+            
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func loadImage(_ sender: AnyObject) {
+        
+        initialiseSession()
+        
+        let imageUrl = URL(string: "http://users.aber.ac.uk/nst/m2220/school.jpg")
+        let imageTask = session!.dataTask(with: imageUrl!, completionHandler: {
+            (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    self.image.image = UIImage(data: data)
+                }
+            }
+            
+        })
+        imageTask.resume()
+    }
+    
+    @IBAction func postData(_ sender: AnyObject) {
+        
+        initialiseSession()
+        
+        let postUrl = URL(string: "http://users.aber.ac.uk/nst/ios/jsonMovieSynopsis.php")
+        var postUrlRequest = URLRequest(url: postUrl!)
+        postUrlRequest.httpMethod = "POST"
+        postUrlRequest.httpBody = "moviename=Back to the Future".data(using: .utf8)
+        
+        let postTask = session!.uploadTask(with: postUrlRequest, from: postUrlRequest.httpBody) {
+            (data: Data?, response: URLResponse?, error: Error?) in
+            print("The data is: \(data)")
+            if let data = data {
+                print(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                let json = JSON(data: data)
+                print(json["films"][0]["film"])
+                print(json["films"][0]["synopsis"])
+                print(json["films"][0]["rating"])
+                print(json.count)
+            }
+        }
+        postTask.resume()
+        
+    }
+    
+    @IBAction func finishSession() {
+        session?.finishTasksAndInvalidate()
+        session = nil
+    }
+    
     @IBAction func loadData(_ sender: AnyObject) {
         
+        initialiseSession()
+        
         self.dataLabel.text = "";
-        
-        let configuration = URLSessionConfiguration.default
-        //you can change the configuration items by assigning values.
-        //configuration.timeoutIntervalForRequest = 10.0
-        
-        session = URLSession(configuration: configuration)
-        
-        // This example creates a new session object each time, but it is capable of
-        // hanlding multiple requests up to the point when it is invalidated. A better
-        // approach would be to initialise this once for the view controller, and
-        // call it each time.
-        
-        
         
         let url = URL(string: urlLabel.text!)
         
@@ -84,17 +143,18 @@ class ViewController: UIViewController {
                         // What happens if you uncomment the following line?
                         //print(((((jsonData["channel"] as! NSArray)[1]) as! NSDictionary)["item"]! as! NSDictionary)["title"]!)
                         
+                        /*
                         self.dataLabel.text = text
                         self.session?.finishTasksAndInvalidate()
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        */
                         
                         // Uncomment the following block
-                        /*
+                        
                         DispatchQueue.main.async {
                             self.dataLabel.text = text
-                            self.session?.finishTasksAndInvalidate()
                             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                        }*/
+                        }
                     }
                 }
                 catch let error as NSError {
@@ -106,9 +166,9 @@ class ViewController: UIViewController {
                 // See https://github.com/SwiftyJSON/SwiftyJSON
                 // Simple integration is used here, by copying SwiftyJASON.swift into the 
                 // project.
-                //let json = JSON(data: downloadedData)
-                //print("Data is: \(json["channel"][0]["item"]["title"])")
-                //print("Data is \(json["wordpairs"][0]["note"])")
+                let json = JSON(data: downloadedData)
+                print("Data is: \(json["channel"][0]["item"]["title"])")
+                print("Data is \(json["wordpairs"][2]["image"])")
             }
             else {
                 print("downloaded data was empty \(error?.localizedDescription)")
